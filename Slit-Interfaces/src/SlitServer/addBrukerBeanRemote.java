@@ -5,7 +5,6 @@
  */
 package SlitServer;
 
-import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -13,16 +12,8 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface StudentListRemote {
+public interface addBrukerBeanRemote {
 
-    void addStudent();
-
-    List getStudents();
-
-    void setTest1(String name);
-
-    String getTest1();
-
-    int testMethod(int n1, int n2);
-
+    void addUser(String name, int id, String email);
+    
 }

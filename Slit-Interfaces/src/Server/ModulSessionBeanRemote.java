@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SlitServer;
+package Server;
 
-import java.util.List;
+import DataModel.ModulDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -13,16 +13,9 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface StudentListRemote {
-
-    void addStudent();
-
-    List getStudents();
-
-    void setTest1(String name);
-
-    String getTest1();
-
-    int testMethod(int n1, int n2);
-
+public interface ModulSessionBeanRemote {
+    
+    ModulDataModel getModulById(int id);
+    
+    
 }

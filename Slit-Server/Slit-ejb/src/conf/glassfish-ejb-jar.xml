@@ -3,10 +3,10 @@
 <glassfish-ejb-jar>
   <enterprise-beans>
     <ejb>
-      <ejb-name>StudentList</ejb-name>
+      <ejb-name>addBrukerBean</ejb-name>
       <resource-ref>
-        <res-ref-name>RefName1</res-ref-name>
-        <jndi-name>java:module/SLIT</jndi-name>
+        <res-ref-name>slitCon</res-ref-name>
+        <jndi-name>java:module/slitConnection</jndi-name>
       </resource-ref>
     </ejb>
   </enterprise-beans>

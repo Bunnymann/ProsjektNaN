@@ -5,44 +5,20 @@
  */
 package slitapplication;
 
-import SlitServer.StudentListRemote;
+import Framework.ModulManager;
 import java.util.List;
-import javax.ejb.EJB;
 
 /**
  *
  * @author Sindre
  */
-public class Main { // extends Application {
+public class Main { 
 
-    @EJB
-    static StudentListRemote studentList;
-    //Parent root;
-    //Scene scene;
-    //Stage primaryStage;
-
-    /*@Override
-    public void start(Stage primaryStage) {
-        Parent root = new MainScene();
-        Scene scene = new Scene(root, 600, 400);
-        primaryStage.setTitle("SLIT");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-     */
     public static void main(String[] args) {
-        // test1 before set method is called
-        System.out.println(studentList.getTest1());
-        studentList.setTest1("Test Satt");
-        System.out.println(studentList.getTest1());
-
-        //launch(args);
+        ModulManager manager = new ModulManager();
+        System.out.println(manager.getModulName(1));
     }
 
-    public static void printStudentList() {
-        List<String> students = studentList.getStudents();
-        System.out.println(students);
-    }
 
     /*public Stage getPrimaryStage() {
         return primaryStage;
@@ -65,4 +41,5 @@ public class Main { // extends Application {
         primaryStage.show();
 
     }*/
+    
 }
