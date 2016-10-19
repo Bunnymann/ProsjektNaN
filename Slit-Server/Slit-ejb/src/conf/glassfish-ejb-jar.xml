@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE glassfish-ejb-jar PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 EJB 3.1//EN" "http://glassfish.org/dtds/glassfish-ejb-jar_3_1-1.dtd">
 <glassfish-ejb-jar>
-  <enterprise-beans>
-    <ejb>
-      <ejb-name>addBrukerBean</ejb-name>
-      <resource-ref>
-        <res-ref-name>slitCon</res-ref-name>
-        <jndi-name>java:module/slitConnection</jndi-name>
-      </resource-ref>
-    </ejb>
-  </enterprise-beans>
 </glassfish-ejb-jar>
