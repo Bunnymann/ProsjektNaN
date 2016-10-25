@@ -39,6 +39,25 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
         modulData.setModulName(modul.getModulName());
         return modulData;
     }
+
+    public Modul convertToModulEntity(ModulDataModel m){
+        Modul newModul = new Modul();
+        newModul.setIdmodul(m.getIdModul());
+        newModul.setModulName(m.getModulName());
+        newModul.setModuldesc(m.getModulDesc());
+        return newModul;
+
+    }
+    @Override
+    public void createModul(int id, String name, String desc){
+        Modul modulEntity = new Modul();
+        
+        modulEntity.setIdmodul(id);
+        modulEntity.setModulName(name);
+        modulEntity.setModuldesc(desc);
+        
+        persist(modulEntity);
+    }
     
     public void persist(Object object) {
         em.persist(object);

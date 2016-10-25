@@ -18,11 +18,11 @@ import Server.ModulSessionBeanRemote;
  * @author Sindre
  */
 public class ModulManager {
-
+        
     private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (ModulSessionBeanRemote) c.lookup("java:comp/env/ModulSessionBean");
+            return (ModulSessionBeanRemote) c.lookup("java:global/Slit-ejb/ModulSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
@@ -35,5 +35,10 @@ public class ModulManager {
     
     public String getModulName(int id){
         return this.lookupModulSessionBeanRemote().getModulById(id).getModulName();
+    }
+    
+    public void createModul(int id, String name, String desc){
+        ModulSessionBeanRemote bean = this.lookupModulSessionBeanRemote();
+        bean.createModul(id, name, desc);
     }
 }

@@ -16,10 +16,6 @@
                     <path-in-war>/</path-in-war>
                 </library>
                 <library>
-                    <file>${file.reference.mysql-connector-java-5.1.39-bin.jar}</file>
-                    <path-in-war>/</path-in-war>
-                </library>
-                <library>
                     <file>${reference.Slit-ejb.dist-ear}</file>
                     <path-in-war>/</path-in-war>
                 </library>

@@ -17,6 +17,17 @@ public class ModulDataModel implements java.io.Serializable {
     
     private String modulname;
 
+    public ModulDataModel() {
+    }
+
+    public ModulDataModel(Integer idmodul, String moduldesc, String modulname) {
+        this.idmodul = idmodul;
+        this.moduldesc = moduldesc;
+        this.modulname = modulname;
+    }
+    
+    
+
     public Integer getIdModul() {
         return idmodul;
     }

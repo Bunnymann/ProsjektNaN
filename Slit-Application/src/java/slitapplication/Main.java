@@ -17,6 +17,8 @@ public class Main {
     public static void main(String[] args) {
         ModulManager manager = new ModulManager();
         System.out.println(manager.getModulName(1));
+        manager.createModul(2, "Modul 2", "Beskrivelse Modul 2");
+        System.out.println(manager.getModulById(2));
     }
 
 
