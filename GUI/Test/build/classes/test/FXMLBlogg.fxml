@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.FXMLBloggController">
+   <children>
+      <ScrollPane layoutX="23.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="74.0" layoutY="26.0" mnemonicParsing="false" text="Uke 1" />
+                  <Button layoutX="74.0" layoutY="75.0" mnemonicParsing="false" text="Uke 2" />
+                  <Button layoutX="72.0" layoutY="123.0" mnemonicParsing="false" text="Uke 3" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <TextArea layoutX="260.0" layoutY="61.0" prefHeight="321.0" prefWidth="321.0" text="Hei bloggen &lt;3" />
+      <Label layoutX="272.0" layoutY="19.0" text="Blogg:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
