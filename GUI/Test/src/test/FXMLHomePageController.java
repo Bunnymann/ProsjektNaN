@@ -57,6 +57,16 @@ public class FXMLHomePageController implements Initializable {
         blogg_stage.setScene(blogg_scene);
         blogg_stage.show();
     }
+    
+    @FXML
+    private void loggUt(ActionEvent event) throws IOException {
+        Parent loggUt_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene loggUt_scene = new Scene(loggUt_parent);
+        Stage loggUt_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        loggUt_stage.hide();
+        loggUt_stage.setScene(loggUt_scene);
+        loggUt_stage.show();
+    }
 
     /**
      * Initializes the controller class.
