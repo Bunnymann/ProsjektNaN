@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.FXMLModulerController">
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLModulerController">
     <stylesheets>
         <URL value="@fxmlmoduler.css" />
     </stylesheets>
@@ -25,5 +25,6 @@
       <TextArea layoutX="223.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" text="Test&#10;Test&#10;Test" />
       <Button layoutX="266.0" layoutY="336.0" mnemonicParsing="false" text="Legg til fil" />
       <Button layoutX="249.0" layoutY="375.0" mnemonicParsing="false" text="Lever besvarelse" />
+      <Button layoutX="517.0" layoutY="389.0" mnemonicParsing="false" onAction="#tilbake" text="Tilbake" />
    </children>
 </AnchorPane>

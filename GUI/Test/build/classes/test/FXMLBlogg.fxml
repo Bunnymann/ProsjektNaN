@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.FXMLBloggController">
+<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLBloggController">
    <children>
       <ScrollPane layoutX="23.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0">
         <content>
@@ -27,5 +26,6 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button layoutX="534.0" layoutY="391.0" mnemonicParsing="false" onAction="#tilbake" text="Tilbake" />
    </children>
 </AnchorPane>

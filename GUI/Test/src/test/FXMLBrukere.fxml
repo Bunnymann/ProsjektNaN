@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.FXMLBrukereController">
+<AnchorPane id="AnchorPane" prefHeight="425.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLBrukereController">
    <children>
       <Label layoutX="271.0" layoutY="42.0" text="Brukere">
          <font>
@@ -26,5 +25,6 @@
         </content>
       </ScrollPane>
       <TextArea layoutX="262.0" layoutY="80.0" prefHeight="296.0" prefWidth="304.0" text="Test&#10;Test&#10;Test" />
+      <Button layoutX="537.0" layoutY="384.0" mnemonicParsing="false" onAction="#tilbake" text="Tilbake" />
    </children>
 </AnchorPane>
