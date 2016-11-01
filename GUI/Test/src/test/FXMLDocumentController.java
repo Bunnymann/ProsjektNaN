@@ -37,6 +37,16 @@ public class FXMLDocumentController implements Initializable {
         system_stage.show();
     }
     
+    @FXML
+    private void lærer(ActionEvent event) throws IOException {
+        Parent lærer_parent = FXMLLoader.load(getClass().getResource("FXMLLærer.fxml"));
+        Scene lærer_scene = new Scene(lærer_parent);
+        Stage lærer_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        lærer_stage.hide();
+        lærer_stage.setScene(lærer_scene);
+        lærer_stage.show();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

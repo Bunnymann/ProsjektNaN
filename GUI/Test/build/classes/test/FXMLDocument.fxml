@@ -21,5 +21,6 @@
             <Font size="16.0" />
          </font>
       </Label>
+      <Button layoutX="14.0" layoutY="201.0" mnemonicParsing="false" onAction="#lærer" text="Lærer" />
     </children>
 </AnchorPane>
