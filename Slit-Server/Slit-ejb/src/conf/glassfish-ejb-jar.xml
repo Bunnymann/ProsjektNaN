@@ -3,11 +3,10 @@
 <glassfish-ejb-jar>
   <enterprise-beans>
     <ejb>
-      <ejb-name>StudentList</ejb-name>
-      <resource-ref>
-        <res-ref-name>RefName1</res-ref-name>
-        <jndi-name>java:module/SLIT</jndi-name>
-      </resource-ref>
+      <ejb-name>ModulSessionBean</ejb-name>
+      <ejb-ref>
+        <ejb-ref-name>ejb_ref1</ejb-ref-name>
+      </ejb-ref>
     </ejb>
   </enterprise-beans>
 </glassfish-ejb-jar>
