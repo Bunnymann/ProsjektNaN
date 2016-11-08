@@ -5,9 +5,6 @@
  */
 package slitapplication;
 
-import SlitServer.StudentListRemote;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -21,9 +18,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 /**
  *
@@ -201,15 +195,4 @@ public class MainScene extends BorderPane {
     public void setHboxBot(HBox hboxBot) {
         this.hboxBot = hboxBot;
     }
-
-    private StudentListRemote lookupStudentListRemote() {
-        try {
-            Context c = new InitialContext();
-            return (StudentListRemote) c.lookup("java:comp/env/StudentList");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
-    }
-
 }

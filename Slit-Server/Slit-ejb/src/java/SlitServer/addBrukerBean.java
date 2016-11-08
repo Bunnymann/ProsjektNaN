@@ -5,13 +5,15 @@
  */
 package SlitServer;
 
-import javax.ejb.Remote;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Sindre
  */
-@Remote
-public interface addBrukerBeanRemote {
+@Stateless
+public class addBrukerBean implements addBrukerBeanRemote {
 
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
 }

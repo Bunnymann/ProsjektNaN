@@ -14,9 +14,12 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface ModulSessionBeanRemote {
-    
-    ModulDataModel getModulById(int id);
-    
-    void createModul(int id, String name, String desc);
 
+    ModulDataModel getModulById(int id);
+
+    void createModul(int id, String name, String desc, String frist, String kriterier, int quizID);
+
+    void persist(Object object);
+
+    String testMethod();
 }

@@ -20,49 +20,56 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
 
     @PersistenceContext(unitName = "Slit-ejbPU")
     private EntityManager em;
-    
+
     @Override
-    public ModulDataModel getModulById(int id){
+    public ModulDataModel getModulById(int id) {
         Modul modul = em.find(Modul.class, id);
         return convertModul(modul);
-        
-    }
-    
-    
 
-    
-    
-    public ModulDataModel convertModul(Modul modul){
+    }
+
+    public ModulDataModel convertModul(Modul modul) {
         ModulDataModel modulData = new ModulDataModel();
-        modulData.setIdModul(modul.getIdmodul());
-        modulData.setModulDesc(modul.getModuldesc());
-        modulData.setModulName(modul.getModulName());
+        modulData.setIdModul(modul.getModulID());
+        modulData.setModulDesc(modul.getModulBesk());
+        modulData.setModulName(modul.getModulNavn());
+        modulData.setModulFrist(modul.getFrist());
+        modulData.setModulKriterier(modul.getKriterier());
+
         return modulData;
     }
 
-    public Modul convertToModulEntity(ModulDataModel m){
+    public Modul convertToModulEntity(ModulDataModel m) {
         Modul newModul = new Modul();
-        newModul.setIdmodul(m.getIdModul());
-        newModul.setModulName(m.getModulName());
-        newModul.setModuldesc(m.getModulDesc());
+        newModul.setModulID(m.getIdModul());
+        newModul.setModulNavn(m.getModulName());
+        newModul.setModulBesk(m.getModulDesc());
         return newModul;
 
     }
+
     @Override
-    public void createModul(int id, String name, String desc){
+    public void createModul(int id, String name, String desc, String frist, String kriterier, int quizID) {
         Modul modulEntity = new Modul();
-        
-        modulEntity.setIdmodul(id);
-        modulEntity.setModulName(name);
-        modulEntity.setModuldesc(desc);
-        
+
+        modulEntity.setModulID(id);
+        modulEntity.setModulNavn(name);
+        modulEntity.setModulBesk(desc);
+        modulEntity.setKriterier(kriterier);
+        modulEntity.setFrist(frist);
+        //modulEntity.setQuizID(em.find(Quiz.class, quizID));
+
         persist(modulEntity);
     }
-    
+
+    @Override
+    public String testMethod() {
+        return "This is a test";
+    }
+
+    @Override
     public void persist(Object object) {
         em.persist(object);
     }
-    
-    
-    
+
 }

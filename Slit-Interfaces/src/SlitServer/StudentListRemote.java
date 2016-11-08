@@ -5,7 +5,6 @@
  */
 package SlitServer;
 
-import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -14,15 +13,5 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface StudentListRemote {
-
-    void addStudent();
-
-    List getStudents();
-
-    void setTest1(String name);
-
-    String getTest1();
-
-    int testMethod(int n1, int n2);
 
 }
