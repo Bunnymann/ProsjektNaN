@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLHomePageController">
+<AnchorPane id="AnchorPane" prefHeight="412.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLHomePageController">
     <stylesheets>
         <URL value="@fxmlhomepage.css" />
     </stylesheets>
@@ -22,5 +22,6 @@
       <Button layoutX="33.0" layoutY="200.0" mnemonicParsing="false" onAction="#brukere" text="Brukere" />
       <Button layoutX="38.0" layoutY="262.0" mnemonicParsing="false" onAction="#blogg" text="Blogg" />
       <TextArea layoutX="201.0" layoutY="95.0" prefHeight="268.0" prefWidth="370.0" text="Test!&#10;Test!&#10;Test!&#10;Test!&#10;Test!" />
+      <Button layoutX="527.0" layoutY="377.0" mnemonicParsing="false" onAction="#loggUt" prefHeight="9.0" prefWidth="66.0" text="Logg ut" />
    </children>
 </AnchorPane>

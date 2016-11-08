@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="284.0" prefWidth="382.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="284.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="160.0" layoutY="201.0" onAction="#handleButtonAction" text="Logg Inn" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
@@ -15,5 +16,11 @@
       <TextField layoutX="161.0" layoutY="91.0" />
       <TextField layoutX="161.0" layoutY="130.0" />
       <Label layoutX="129.0" layoutY="244.0" text="Feil passord, prøv igjen." textFill="#ee0707" />
+      <Label layoutX="177.0" layoutY="21.0" text="IS-202">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="201.0" mnemonicParsing="false" onAction="#lærer" text="Lærer" />
     </children>
 </AnchorPane>

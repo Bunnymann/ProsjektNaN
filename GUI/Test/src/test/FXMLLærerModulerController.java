@@ -23,14 +23,14 @@ import javafx.stage.Stage;
  *
  * @author Tomma
  */
-public class FXMLBloggController implements Initializable {
+public class FXMLLærerModulerController implements Initializable {
     
     @FXML
     private Label label;
     
     @FXML
     private void tilbake(ActionEvent event) throws IOException {
-        Parent tilbake_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
+        Parent tilbake_parent = FXMLLoader.load(getClass().getResource("FXMLLærer.fxml"));
         Scene tilbake_scene = new Scene(tilbake_parent);
         Stage tilbake_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         tilbake_stage.hide();

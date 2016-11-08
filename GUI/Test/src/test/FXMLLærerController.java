@@ -23,39 +23,19 @@ import javafx.stage.Stage;
  *
  * @author Tomma
  */
-public class FXMLHomePageController implements Initializable {
+public class FXMLLærerController implements Initializable {
     
     @FXML
     private Label label;
     
     @FXML
     private void moduler(ActionEvent event) throws IOException {
-        Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModuler.fxml"));
+        Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLLærerModuler.fxml"));
         Scene moduler_scene = new Scene(moduler_parent);
         Stage moduler_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         moduler_stage.hide();
         moduler_stage.setScene(moduler_scene);
         moduler_stage.show();
-    }
-    
-    @FXML
-    private void brukere(ActionEvent event) throws IOException {
-        Parent brukere_parent = FXMLLoader.load(getClass().getResource("FXMLBrukere.fxml"));
-        Scene brukere_scene = new Scene(brukere_parent);
-        Stage brukere_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        brukere_stage.hide();
-        brukere_stage.setScene(brukere_scene);
-        brukere_stage.show();
-    }
-    
-    @FXML
-    private void blogg(ActionEvent event) throws IOException {
-        Parent blogg_parent = FXMLLoader.load(getClass().getResource("FXMLBlogg.fxml"));
-        Scene blogg_scene = new Scene(blogg_parent);
-        Stage blogg_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        blogg_stage.hide();
-        blogg_stage.setScene(blogg_scene);
-        blogg_stage.show();
     }
     
     @FXML
