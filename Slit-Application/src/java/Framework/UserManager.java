@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SlitServer;
-
-import javax.ejb.Remote;
+package Framework;
 
 /**
  *
  * @author Sindre
  */
-@Remote
-public interface StudentListRemote {
-
+public class UserManager {
+    
+    
 }

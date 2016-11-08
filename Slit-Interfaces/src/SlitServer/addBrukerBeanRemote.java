@@ -12,6 +12,6 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface StudentListRemote {
+public interface addBrukerBeanRemote {
 
 }

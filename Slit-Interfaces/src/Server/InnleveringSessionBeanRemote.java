@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SlitServer;
+package Server;
 
 import javax.ejb.Remote;
 
@@ -12,6 +12,6 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface StudentListRemote {
+public interface InnleveringSessionBeanRemote {
 
 }

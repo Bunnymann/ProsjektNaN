@@ -5,15 +5,15 @@
  */
 package SlitServer;
 
-import javax.ejb.Remote;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Sindre
  */
-@Remote
-public interface NewSessionBeanRemote {
+@Stateless
+public class StudentList implements StudentListRemote {
 
-    String businessMethod();
-    
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
 }
