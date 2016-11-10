@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Innlevering.findAll", query = "SELECT i FROM Innlevering i"),
     @NamedQuery(name = "Innlevering.findByInnlevID", query = "SELECT i FROM Innlevering i WHERE i.innlevID = :innlevID"),
     @NamedQuery(name = "Innlevering.findByDato", query = "SELECT i FROM Innlevering i WHERE i.dato = :dato")})
-public class Innlevering implements Serializable {
+public class Besvarelse implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -54,18 +54,18 @@ public class Innlevering implements Serializable {
     @ManyToOne
     private Tilbakemelding meldingID;
 
-    public Innlevering() {
+    public Besvarelse() {
     }
 
-    public Innlevering(Integer innlevID) {
+    public Besvarelse(Integer innlevID) {
         this.innlevID = innlevID;
     }
 
-    public Integer getInnlevID() {
+    public Integer getBesvarelseID() {
         return innlevID;
     }
 
-    public void setInnlevID(Integer innlevID) {
+    public void setBesvarelseID(Integer innlevID) {
         this.innlevID = innlevID;
     }
 
@@ -111,10 +111,10 @@ public class Innlevering implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Innlevering)) {
+        if (!(object instanceof Besvarelse)) {
             return false;
         }
-        Innlevering other = (Innlevering) object;
+        Besvarelse other = (Besvarelse) object;
         if ((this.innlevID == null && other.innlevID != null) || (this.innlevID != null && !this.innlevID.equals(other.innlevID))) {
             return false;
         }

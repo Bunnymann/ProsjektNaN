@@ -50,7 +50,7 @@ public class Student implements Serializable {
     @OneToOne(optional = false)
     private Bruker bruker;
     @OneToMany(mappedBy = "brukerID")
-    private List<Innlevering> innleveringList;
+    private List<Besvarelse> innleveringList;
 
     public Student() {
     }
@@ -93,11 +93,11 @@ public class Student implements Serializable {
     }
 
     @XmlTransient
-    public List<Innlevering> getInnleveringList() {
+    public List<Besvarelse> getInnleveringList() {
         return innleveringList;
     }
 
-    public void setInnleveringList(List<Innlevering> innleveringList) {
+    public void setInnleveringList(List<Besvarelse> innleveringList) {
         this.innleveringList = innleveringList;
     }
 

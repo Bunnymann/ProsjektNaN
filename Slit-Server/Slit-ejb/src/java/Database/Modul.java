@@ -58,7 +58,7 @@ public class Modul implements Serializable {
     @Column(name = "kriterier")
     private String kriterier;
     @OneToMany(mappedBy = "modulID")
-    private List<Innlevering> innleveringList;
+    private List<Besvarelse> innleveringList;
     @JoinColumn(name = "quizID", referencedColumnName = "quizID")
     @ManyToOne
     private Quiz quizID;
@@ -111,11 +111,11 @@ public class Modul implements Serializable {
     }
 
     @XmlTransient
-    public List<Innlevering> getInnleveringList() {
+    public List<Besvarelse> getInnleveringList() {
         return innleveringList;
     }
 
-    public void setInnleveringList(List<Innlevering> innleveringList) {
+    public void setInnleveringList(List<Besvarelse> innleveringList) {
         this.innleveringList = innleveringList;
     }
 
