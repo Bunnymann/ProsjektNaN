@@ -52,7 +52,7 @@ public class Tilbakemelding implements Serializable {
     @Column(name = "l\u00e6rerMld")
     private String lærerMld;
     @OneToMany(mappedBy = "meldingID")
-    private List<Innlevering> innleveringList;
+    private List<Besvarelse> innleveringList;
 
     public Tilbakemelding() {
     }
@@ -94,11 +94,11 @@ public class Tilbakemelding implements Serializable {
     }
 
     @XmlTransient
-    public List<Innlevering> getInnleveringList() {
+    public List<Besvarelse> getInnleveringList() {
         return innleveringList;
     }
 
-    public void setInnleveringList(List<Innlevering> innleveringList) {
+    public void setInnleveringList(List<Besvarelse> innleveringList) {
         this.innleveringList = innleveringList;
     }
 

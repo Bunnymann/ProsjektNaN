@@ -17,8 +17,14 @@
     <remote>Server.ModuSessionBeanlRemote</remote>
   </ejb-ref>
   <ejb-ref>
+<<<<<<< HEAD
     <ejb-ref-name>LeggTilKommentarSessionBean</ejb-ref-name>
     <ejb-ref-type>Session</ejb-ref-type>
     <remote>Server.LeggTilKommentarSessionBeanRemote</remote>
+=======
+    <ejb-ref-name>InnleveringSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <remote>Server.InnleveringSessionBeanRemote</remote>
+>>>>>>> develop
   </ejb-ref>
 </application-client>

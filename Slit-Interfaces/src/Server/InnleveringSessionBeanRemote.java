@@ -5,6 +5,7 @@
  */
 package Server;
 
+import DataModel.BesvarelseDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -13,5 +14,13 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface InnleveringSessionBeanRemote {
+    
+    BesvarelseDataModel getBesvarelseById(int id);
+
+    void createBesvarelse(int id, String dato);
+
+    void persist(Object object);
+
+    String testMethod();
 
 }
