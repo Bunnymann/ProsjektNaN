@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         ModulManager manager = new ModulManager();
         //System.out.println(manager.getModulName(1));
-        System.out.println(manager.getModulById(3).getModulname());
+        System.out.println(manager.getModul(3).getModulname());
     }
 
 

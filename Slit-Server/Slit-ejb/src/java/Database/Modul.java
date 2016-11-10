@@ -21,7 +21,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -64,6 +63,7 @@ public class Modul implements Serializable {
     private Quiz quizID;
 
     public Modul() {
+        System.out.println("Modul Constructor Called");
     }
 
     public Modul(Integer modulID) {
@@ -110,7 +110,6 @@ public class Modul implements Serializable {
         this.kriterier = kriterier;
     }
 
-    @XmlTransient
     public List<Innlevering> getInnleveringList() {
         return innleveringList;
     }

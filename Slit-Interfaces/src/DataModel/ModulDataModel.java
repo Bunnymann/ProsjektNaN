@@ -24,6 +24,7 @@ public class ModulDataModel implements java.io.Serializable {
     private Integer quizID;
 
     public ModulDataModel() {
+        System.out.println("ModulData Constructor Called");
     }
 
     public ModulDataModel(Integer idmodul, String moduldesc, String modulname, String modulFrist, String kriterier, Integer quizID) {
@@ -81,30 +82,6 @@ public class ModulDataModel implements java.io.Serializable {
 
     public void setQuizID(Integer quizID) {
         this.quizID = quizID;
-    }
-
-    public Integer getIdModul() {
-        return idmodul;
-    }
-
-    public void setIdModul(Integer idModul) {
-        this.idmodul = idModul;
-    }
-
-    public String getModulDesc() {
-        return moduldesc;
-    }
-
-    public void setModulDesc(String modulDesc) {
-        this.moduldesc = modulDesc;
-    }
-
-    public String getModulName() {
-        return modulname;
-    }
-
-    public void setModulName(String modulName) {
-        this.modulname = modulName;
     }
 
     @Override
