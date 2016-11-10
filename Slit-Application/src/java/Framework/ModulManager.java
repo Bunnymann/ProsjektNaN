@@ -19,7 +19,7 @@ import javax.naming.NamingException;
  */
 public class ModulManager {
 
-    private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
+    /*private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
         try {
             Context c = new InitialContext();
             return (ModulSessionBeanRemote) c.lookup("java:global/Slit-ejb/ModulSessionBean");
@@ -27,14 +27,16 @@ public class ModulManager {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
-    }
-
-    public ModulDataModel getModulById(int id) {
+    }*/
+    public ModulDataModel getModul(int id) {
+        System.out.println("manager.getModul Called");
         return this.lookupModulSessionBeanRemote().getModulById(id);
     }
 
     public String getModulName(int id) {
-        return this.lookupModulSessionBeanRemote().getModulById(id).getModulName();
+        System.out.println("get Name called");
+        return this.lookupModulSessionBeanRemote().getModulById(id).getModulname();
+
     }
 
     public void createModul(int id, String name, String desc, String frist, String kriterier, int quizID) {
@@ -44,5 +46,16 @@ public class ModulManager {
 
     public String returnTest() {
         return this.lookupModulSessionBeanRemote().testMethod();
+    }
+
+    private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
+        try {
+            System.out.println("Lookup Called");
+            Context c = new InitialContext();
+            return (ModulSessionBeanRemote) c.lookup("java:global/Slit-ejb/ModulSessionBean");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
     }
 }

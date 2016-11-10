@@ -23,16 +23,17 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
 
     @Override
     public ModulDataModel getModulById(int id) {
+        System.out.println("getModulById called");
         Modul modul = em.find(Modul.class, id);
         return convertModul(modul);
-
     }
 
     public ModulDataModel convertModul(Modul modul) {
+        System.out.println("Converter Called");
         ModulDataModel modulData = new ModulDataModel();
-        modulData.setIdModul(modul.getModulID());
-        modulData.setModulDesc(modul.getModulBesk());
-        modulData.setModulName(modul.getModulNavn());
+        modulData.setIdmodul(modul.getModulID());
+        modulData.setModuldesc(modul.getModulBesk());
+        modulData.setModulname(modul.getModulNavn());
         modulData.setModulFrist(modul.getFrist());
         modulData.setModulKriterier(modul.getKriterier());
 
@@ -41,9 +42,11 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
 
     public Modul convertToModulEntity(ModulDataModel m) {
         Modul newModul = new Modul();
-        newModul.setModulID(m.getIdModul());
-        newModul.setModulNavn(m.getModulName());
-        newModul.setModulBesk(m.getModulDesc());
+        newModul.setModulID(m.getIdmodul());
+        newModul.setModulNavn(m.getModulname());
+        newModul.setModulBesk(m.getModuldesc());
+        newModul.setFrist(m.getModulFrist());
+        newModul.setKriterier(m.getModulKriterier());
         return newModul;
 
     }

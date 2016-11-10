@@ -6,7 +6,6 @@
 package slitapplication;
 
 import Framework.BesvarelseManager;
-import Framework.ModulManager;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Main {
         BesvarelseManager manager = new BesvarelseManager();
         //System.out.println(manager.getModulName(1));
         System.out.println(manager.testMethod());
-        
+
     }
 
 

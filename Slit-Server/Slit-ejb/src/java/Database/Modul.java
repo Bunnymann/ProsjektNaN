@@ -64,6 +64,7 @@ public class Modul implements Serializable {
     private Quiz quizID;
 
     public Modul() {
+        System.out.println("Modul Constructor Called");
     }
 
     public Modul(Integer modulID) {
