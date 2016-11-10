@@ -5,6 +5,7 @@
  */
 package Server;
 
+import DataModel.TilbakemeldingDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -13,5 +14,5 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface LeggTilKommentarSessionBeanRemote {
-    
+    TilbakemeldingDataModel getTilbakemeldingById (int id);
 }

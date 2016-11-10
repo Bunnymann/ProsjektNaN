@@ -53,5 +53,8 @@ private EntityManager em;
         
     }
     
+    public leggTilLærerMld(int meldingId, String lærerMld); {
+    
+}
 }
 
