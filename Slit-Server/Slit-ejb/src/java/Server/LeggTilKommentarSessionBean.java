@@ -53,8 +53,19 @@ private EntityManager em;
         
     }
     
-    public leggTilLærerMld(int meldingId, String lærerMld); {
+    @Override
+    public void leggTilLærerMld(int meldingId, String lærerMld) {
+        Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
+        
+        tilbakemeldingEntity.setMeldingID(meldingId);
+        tilbakemeldingEntity.setLærerMld(lærerMld);
+        
+        persist(tilbakemeldingEntity);
+    }
+
+    public void persist(Object object) {
+        em.persist(object);
+    }
     
-}
 }
 

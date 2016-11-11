@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.TilbakemeldingDataModel;
 import Server.LeggTilKommentarSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,5 +28,15 @@ public class TilbakmeldingManager {
             throw new RuntimeException(ne);
         }
     }
+  
+    public TilbakemeldingDataModel getTilbakemeldingById(int id) {
+        return this.lookupLeggTilKommentarSessionBeanRemote().getTilbakemeldingById(id);
+    }
+            
     
+    
+    public void leggTilLærerMld(int meldingId, String lærerMld) {
+        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
+        bean.leggTilLærerMld (meldingId, lærerMld);
+    }
 }

@@ -15,4 +15,6 @@ import javax.ejb.Remote;
 @Remote
 public interface LeggTilKommentarSessionBeanRemote {
     TilbakemeldingDataModel getTilbakemeldingById (int id);
+    
+     void leggTilLærerMld(int meldingId, String lærerMld);
 }
