@@ -8,12 +8,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="412.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLHomePageController">
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="969.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.FXMLHomePageController">
     <stylesheets>
         <URL value="@fxmlhomepage.css" />
     </stylesheets>
    <children>
-      <Label layoutX="253.0" layoutY="41.0" text="Påminnelser:">
+      <Label layoutX="485.0" layoutY="55.0" text="Påminnelser:">
          <font>
             <Font size="17.0" />
          </font>
@@ -21,7 +21,12 @@
       <Button layoutX="31.0" layoutY="143.0" mnemonicParsing="false" onAction="#moduler" text="Moduler" />
       <Button layoutX="33.0" layoutY="200.0" mnemonicParsing="false" onAction="#brukere" text="Brukere" />
       <Button layoutX="38.0" layoutY="262.0" mnemonicParsing="false" onAction="#blogg" text="Blogg" />
-      <TextArea layoutX="201.0" layoutY="95.0" prefHeight="268.0" prefWidth="370.0" text="Test!&#10;Test!&#10;Test!&#10;Test!&#10;Test!" />
-      <Button layoutX="527.0" layoutY="377.0" mnemonicParsing="false" onAction="#loggUt" prefHeight="9.0" prefWidth="66.0" text="Logg ut" />
+      <TextArea layoutX="190.0" layoutY="97.0" prefHeight="422.0" prefWidth="739.0" text="Test!&#10;Test!&#10;Test!&#10;Test!&#10;Test!" />
+      <Button layoutX="839.0" layoutY="526.0" mnemonicParsing="false" onAction="#loggUt" prefHeight="31.0" prefWidth="116.0" text="Logg ut" />
+      <TextField alignment="TOP_LEFT" layoutX="1.0" layoutY="-84.0" onAction="#hjem" opacity="0.65" prefHeight="84.0" prefWidth="969.0" text="                                     SLIT ">
+         <font>
+            <Font name="Arial Black" size="36.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

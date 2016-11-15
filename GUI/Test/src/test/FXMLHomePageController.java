@@ -67,6 +67,16 @@ public class FXMLHomePageController implements Initializable {
         loggUt_stage.setScene(loggUt_scene);
         loggUt_stage.show();
     }
+    
+    @FXML
+    private void hjem (ActionEvent event) throws IOException {
+        Parent hjem_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
+        Scene hjem_scene = new Scene(hjem_parent);
+        Stage hjem_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        hjem_stage.hide();
+        hjem_stage.setScene(hjem_scene);
+        hjem_stage.show();
+    }
 
     /**
      * Initializes the controller class.
