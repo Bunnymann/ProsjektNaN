@@ -28,13 +28,13 @@ public class FXMLDocumentController implements Initializable {
     private Label label;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
+    private void Logginn(ActionEvent event) throws IOException {
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXMLHomePage.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
-        Stage system_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        system_stage.hide();
-        system_stage.setScene(home_page_scene);
-        system_stage.show();
+        Stage Logginn_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Logginn_stage.hide();
+        Logginn_stage.setScene(home_page_scene);
+        Logginn_stage.show();
     }
     
     @FXML
@@ -46,6 +46,9 @@ public class FXMLDocumentController implements Initializable {
         lærer_stage.setScene(lærer_scene);
         lærer_stage.show();
     }
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

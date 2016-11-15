@@ -39,6 +39,16 @@ public class FXMLLærerController implements Initializable {
     }
     
     @FXML
+    private void fremdrift(ActionEvent event) throws IOException {
+        Parent fremdrift_parent = FXMLLoader.load(getClass().getResource("FXMLLærerFremdrift.fxml"));
+        Scene fremdrift_scene = new Scene(fremdrift_parent);
+        Stage fremdrift_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        fremdrift_stage.hide();
+        fremdrift_stage.setScene(fremdrift_scene);
+        fremdrift_stage.show();
+    }
+    
+    @FXML
     private void loggUt(ActionEvent event) throws IOException {
         Parent loggUt_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene loggUt_scene = new Scene(loggUt_parent);
