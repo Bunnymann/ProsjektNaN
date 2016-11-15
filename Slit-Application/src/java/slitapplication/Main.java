@@ -5,7 +5,10 @@
  */
 package slitapplication;
 
+import DataModel.BesvarelseDataModel;
 import Framework.BesvarelseManager;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -13,10 +16,13 @@ import Framework.BesvarelseManager;
  */
 public class Main {
 
+    
     public static void main(String[] args) {
         BesvarelseManager manager = new BesvarelseManager();
-        //System.out.println(manager.getModulName(1));
-        System.out.println(manager.testMethod());
+        Date d1 = Calendar.getInstance().getTime();
+        BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
+        
+        manager.createBesvarelse(test);
 
     }
 
@@ -42,4 +48,7 @@ public class Main {
         primaryStage.show();
 
     }*/
+
+    public Main() {
+    }
 }
