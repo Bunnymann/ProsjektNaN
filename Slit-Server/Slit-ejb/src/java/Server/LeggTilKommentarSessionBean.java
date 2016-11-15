@@ -63,6 +63,26 @@ private EntityManager em;
         persist(tilbakemeldingEntity);
     }
 
+    @Override
+    public void leggTilStatusMld (int meldingId, String statusMld) {
+        Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
+        
+        tilbakemeldingEntity.setMeldingID(meldingId);
+        tilbakemeldingEntity.setStatusMld(statusMld);
+        
+        persist (tilbakemeldingEntity);
+    }
+    
+    @Override
+    public void leggTilStudentMld (int meldingId, String studentMld){
+        Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
+        
+        tilbakemeldingEntity.setMeldingID(meldingId);
+        tilbakemeldingEntity.setStudentMld(studentMld);
+        
+        persist (tilbakemeldingEntity);
+    }
+    
     public void persist(Object object) {
         em.persist(object);
     }

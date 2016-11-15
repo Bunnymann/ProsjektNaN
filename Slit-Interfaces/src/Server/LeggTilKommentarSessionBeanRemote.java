@@ -17,4 +17,8 @@ public interface LeggTilKommentarSessionBeanRemote {
     TilbakemeldingDataModel getTilbakemeldingById (int id);
     
      void leggTilLærerMld(int meldingId, String lærerMld);
+     
+     void leggTilStatusMld (int meldingId, String statusMld);
+     
+     void leggTilStudentMld (int meldingId, String studentMld);
 }

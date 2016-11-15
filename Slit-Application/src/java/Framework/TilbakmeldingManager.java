@@ -39,4 +39,14 @@ public class TilbakmeldingManager {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.leggTilLærerMld (meldingId, lærerMld);
     }
+    
+    public void leggTilStatusMld (int meldingId, String statusMld) {
+        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
+        bean.leggTilStatusMld (meldingId, statusMld);
+    }
+    
+    public void leggTilStudentMld (int meldingId, String studentMld){
+        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
+        bean.leggTilStudentMld(meldingId, studentMld);
+    }
 }
