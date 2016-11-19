@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.BesvarelseDataModel;
 import Server.InnleveringSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,9 +29,16 @@ public class BesvarelseManager {
         }
     }
     
+    public void createBesvarelse(BesvarelseDataModel m)
+    {
+        this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
+    }
+    
     public String testMethod(){
         return this.lookupInnleveringSessionBeanRemote().testMethod();
     }
+    
+    
     
     
 }
