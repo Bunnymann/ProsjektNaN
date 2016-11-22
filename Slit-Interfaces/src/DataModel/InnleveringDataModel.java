@@ -11,9 +11,9 @@ import java.util.Date;
  *
  * @author Marius
  */
-public class BesvarelseDataModel implements java.io.Serializable {
+public class InnleveringDataModel implements java.io.Serializable {
     
-    private Integer besvarelseID;
+    private Integer innlevID;
     
     private Date dato;
     
@@ -26,11 +26,12 @@ public class BesvarelseDataModel implements java.io.Serializable {
     //private Tilbakemelding meldingID
     private Integer meldingID;
     
-    public BesvarelseDataModel() {
+    public InnleveringDataModel() {
     }
     
-    public BesvarelseDataModel(Integer besvarelseID, Date dato, Integer brukerID, Integer modulID, Integer meldingID) {
-        this.besvarelseID = besvarelseID;
+    public InnleveringDataModel(Integer innlevID, Date dato, 
+            Integer brukerID, Integer modulID, Integer meldingID) {
+        this.innlevID = innlevID;
         this.dato = dato;
         this.brukerID = brukerID;
         this.idmodul = modulID;
@@ -38,8 +39,8 @@ public class BesvarelseDataModel implements java.io.Serializable {
     }
 
     //Gettere
-    public Integer getBesvarelseID() {
-        return besvarelseID;
+    public Integer getInnlevID() {
+        return innlevID;
     }
 
     public Date getDato() {
@@ -59,8 +60,8 @@ public class BesvarelseDataModel implements java.io.Serializable {
     }
 
     //Settere
-    public void setBesvarelseID(Integer besvarelseID) {
-        this.besvarelseID = besvarelseID;
+    public void setInnleveringID(Integer besvarelseID) {
+        this.innlevID = besvarelseID;
     }
 
     public void setDato(Date dato) {
@@ -81,11 +82,11 @@ public class BesvarelseDataModel implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "BesvarelseDataModel{" + "besvarelseID=" + besvarelseID + ", "
-                + "dato=" + dato + ", brukerID=" + brukerID + ", '"
-                + "idmodul=" + idmodul + ", meldingID=" + meldingID + '}';
+        return "InnleveringDataModel{" + "innlevID=" + innlevID + ", dato=" 
+                + dato + ", brukerID=" + brukerID + ", idmodul=" + idmodul 
+                + ", meldingID=" + meldingID + '}';
     }
-    
+
     
     
    

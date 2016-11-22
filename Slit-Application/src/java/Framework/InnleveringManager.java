@@ -5,8 +5,9 @@
  */
 package Framework;
 
-import DataModel.BesvarelseDataModel;
+import DataModel.InnleveringDataModel;
 import Server.InnleveringSessionBeanRemote;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -17,25 +18,29 @@ import javax.naming.NamingException;
  *
  * @author Marius
  */
-public class BesvarelseManager {
+public class InnleveringManager {
 
     private InnleveringSessionBeanRemote lookupInnleveringSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (InnleveringSessionBeanRemote) c.lookup("java:comp/env/InnleveringSessionBean");
+            return (InnleveringSessionBeanRemote) c.lookup("java:global/Slit-ejb/InnleveringSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
     
-    public void createBesvarelse(BesvarelseDataModel m)
+    public void createInnlevering(InnleveringDataModel m)
     {
-        this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
+        this.lookupInnleveringSessionBeanRemote().createInnlevering(m);
     }
     
     public String testMethod(){
         return this.lookupInnleveringSessionBeanRemote().testMethod();
+    }
+    
+    public List<InnleveringDataModel> findAll(){
+        return this.lookupInnleveringSessionBeanRemote().getAllInnlevering();
     }
     
     

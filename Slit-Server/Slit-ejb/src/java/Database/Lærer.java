@@ -100,5 +100,5 @@ public class Lærer implements Serializable {
     public String toString() {
         return "Database.L\u00e6rer[ brukerID=" + brukerID + " ]";
     }
-
+    
 }

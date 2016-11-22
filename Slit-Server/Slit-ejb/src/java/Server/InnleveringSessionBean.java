@@ -5,7 +5,7 @@
  */
 package Server;
 
-import DataModel.BesvarelseDataModel;
+import DataModel.InnleveringDataModel;
 import Database.Bruker;
 import Database.Innlevering;
 import Database.Modul;
@@ -30,19 +30,19 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
     private EntityManager em;
     
     @Override
-    public BesvarelseDataModel getBesvarelseById(int id) {
+    public InnleveringDataModel getInnleveringById(int id) {
         Innlevering besvarelse = em.find(Innlevering.class, id);
         return convertBesvarelse(besvarelse);
     }
     
     @Override
-    public List<BesvarelseDataModel> getBesvarelse()
+    public List<InnleveringDataModel> getAllInnlevering()
     {
-        List<BesvarelseDataModel> dataBesvarelse = new ArrayList<BesvarelseDataModel>();
+        List<InnleveringDataModel> dataBesvarelse = new ArrayList<InnleveringDataModel>();
         
         try
         {
-            Query query = em.createNamedQuery("Module.findAll", Innlevering.class);
+            Query query = em.createNamedQuery("Innlevering.findAll", Innlevering.class);
             
             List<Innlevering> besvarelser = query.getResultList();
             
@@ -50,6 +50,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
                 {
                     dataBesvarelse.add(this.convertBesvarelse(besvarelse));          
                 }
+                return dataBesvarelse;
         }
             catch(Exception e)
             {
@@ -59,7 +60,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         }
     
     @Override
-    public BesvarelseDataModel getBesvarelse(int id)
+    public InnleveringDataModel getInnlevering(int id)
     {
         Innlevering besvarelse = em.find(Innlevering.class, id);
         
@@ -67,17 +68,17 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
     }
     
     
-    public BesvarelseDataModel convertBesvarelse(Innlevering besvarelse) {
-        BesvarelseDataModel besvarelseData = new BesvarelseDataModel();
-        besvarelseData.setBesvarelseID(besvarelse.getBesvarelseID());
+    public InnleveringDataModel convertBesvarelse(Innlevering besvarelse) {
+        InnleveringDataModel besvarelseData = new InnleveringDataModel();
+        besvarelseData.setInnleveringID(besvarelse.getInnlevID());
         besvarelseData.setDato(besvarelse.getDato());
 
         return besvarelseData;
     }
     
-    public Innlevering convertToBesvarelseEntity(BesvarelseDataModel m) {
+    public Innlevering convertToBesvarelseEntity(InnleveringDataModel m) {
         Innlevering newBesvarelse = new Innlevering();
-        newBesvarelse.setBesvarelseID(m.getBesvarelseID());
+        newBesvarelse.setInnlevID(m.getInnlevID());
         newBesvarelse.setDato(m.getDato());
         newBesvarelse.setBrukerID(em.find(Bruker.class, m.getBrukerID()));
         newBesvarelse.setModulID(em.find(Modul.class, m.getIdmodul()));
@@ -86,7 +87,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
     }
     
     @Override
-    public void createBesvarelse(BesvarelseDataModel m) {
+    public void createInnlevering(InnleveringDataModel m) {
         persist(this.convertToBesvarelseEntity(m));
     }
 

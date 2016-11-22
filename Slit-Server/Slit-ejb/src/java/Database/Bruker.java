@@ -159,5 +159,5 @@ public class Bruker implements Serializable {
     public String toString() {
         return "Database.Bruker[ brukerID=" + brukerID + " ]";
     }
-
+    
 }

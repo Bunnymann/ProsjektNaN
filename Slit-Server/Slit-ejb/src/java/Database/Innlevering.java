@@ -61,11 +61,11 @@ public class Innlevering implements Serializable {
         this.innlevID = innlevID;
     }
 
-    public Integer getBesvarelseID() {
+    public Integer getInnlevID() {
         return innlevID;
     }
 
-    public void setBesvarelseID(Integer innlevID) {
+    public void setInnlevID(Integer innlevID) {
         this.innlevID = innlevID;
     }
 

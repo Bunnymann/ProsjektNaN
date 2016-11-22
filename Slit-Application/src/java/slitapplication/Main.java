@@ -5,10 +5,9 @@
  */
 package slitapplication;
 
-import DataModel.BesvarelseDataModel;
-import Framework.BesvarelseManager;
-import java.util.Calendar;
-import java.util.Date;
+import DataModel.InnleveringDataModel;
+import Framework.InnleveringManager;
+import java.util.List;
 
 /**
  *
@@ -18,11 +17,11 @@ public class Main {
 
     
     public static void main(String[] args) {
-        BesvarelseManager manager = new BesvarelseManager();
-        Date d1 = Calendar.getInstance().getTime();
-        BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
-        
-        manager.createBesvarelse(test);
+        InnleveringManager manager = new InnleveringManager();
+        List<InnleveringDataModel> l1 = manager.findAll();
+        for(InnleveringDataModel i : l1){
+            System.out.println(i.toString());
+        }
 
     }
 
