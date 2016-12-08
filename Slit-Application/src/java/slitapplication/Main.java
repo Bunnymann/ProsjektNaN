@@ -5,20 +5,20 @@
  */
 package slitapplication;
 
-import Framework.BesvarelseManager;
+import slitapplication.GUI.GUI;
+import javafx.application.Application;
+
 
 /**
  *
  * @author Sindre
  */
 public class Main {
-
     public static void main(String[] args) {
-        BesvarelseManager manager = new BesvarelseManager();
-        //System.out.println(manager.getModulName(1));
-        System.out.println(manager.testMethod());
+        Application.launch(GUI.class, args);
+    }  
 
-    }
+    
 
 
     /*public Stage getPrimaryStage() {
