@@ -43,6 +43,7 @@ private EntityManager em;
     
         return tilbakemeldingData;
 }
+    
     public Tilbakemelding convertToTilbakemeldingEntity(TilbakemeldingDataModel tm){
         Tilbakemelding newTilbakemelding = new Tilbakemelding();
         newTilbakemelding.setMeldingID(tm.getMeldingID());

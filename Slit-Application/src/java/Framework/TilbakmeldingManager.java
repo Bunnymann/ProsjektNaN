@@ -49,4 +49,10 @@ public class TilbakmeldingManager {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.leggTilStudentMld(meldingId, studentMld);
     }
+    
+    /*public void oppretteTb (Integer meldingID, String statusMld, String studentMld, String lærerMld){
+        TilbakemeldingDataModel tb = new TilbakemeldingDataModel(meldingID, statusMld, studentMld, lærerMld);
+        this.lookupLeggTilKommentarSessionBeanRemote().
+    }
+    */
 }

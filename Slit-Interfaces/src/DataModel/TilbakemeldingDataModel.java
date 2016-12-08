@@ -66,7 +66,7 @@ public class TilbakemeldingDataModel implements java.io.Serializable {
     public String toString() {
         return "TilbakemeldingDataModel{" + "meldingID=" + meldingID + 
                 ", statusMld=" + statusMld + ", studentMld=" + studentMld + 
-                ", l\u00e6rerMld=" + lærerMld + '}';
+                ", lærerMld=" + lærerMld + '}';
     }
 }
 

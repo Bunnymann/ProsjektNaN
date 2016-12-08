@@ -15,10 +15,11 @@ import Framework.ModulManager;
 public class Main {
 
     public static void main(String[] args) {
-        BesvarelseManager manager = new BesvarelseManager();
+        //BesvarelseManager manager = new BesvarelseManager();
         //System.out.println(manager.getModulName(1));
-        System.out.println(manager.testMethod());
-        
+        //System.out.println(manager.testMethod());
+        TilbakemeldingManager manager = new TilbakemeldingManager();
+        System.out.println(manager.)
     }
 
 
