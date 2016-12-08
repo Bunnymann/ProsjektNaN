@@ -9,9 +9,7 @@ import DataModel.BesvarelseDataModel;
 import Database.Bruker;
 import Database.Innlevering;
 import Database.Modul;
-import Database.Student;
 import Database.Tilbakemelding;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -95,6 +93,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         return "This is a test";
     }
     
+    @Override
     public void persist(Object object) {
         em.persist(object);
     }

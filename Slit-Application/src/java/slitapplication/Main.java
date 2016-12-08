@@ -22,7 +22,7 @@ public class Main {
         Date d1 = Calendar.getInstance().getTime();
         BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
         
-        manager.createBesvarelse(test);
+        manager.testMethod();
 
     }
 
