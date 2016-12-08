@@ -5,10 +5,25 @@
  */
 package DataModel;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Sindre
  */
-public class ModulListPojo {
+public class ModulListPojo implements java.io.Serializable {
 
+    ArrayList modulListPojo;
+
+    public ModulListPojo(ArrayList modulListPojo) {
+        this.modulListPojo = modulListPojo;
+    }
+
+    public ArrayList getModulListPojo() {
+        return modulListPojo;
+    }
+
+    public void setModulListPojo(ArrayList modulListPojo) {
+        this.modulListPojo = modulListPojo;
+    }
 }

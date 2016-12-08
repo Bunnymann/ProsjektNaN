@@ -6,7 +6,9 @@
 package Framework;
 
 import DataModel.ModulDataModel;
+import DataModel.ModulListPojo;
 import Server.ModulSessionBeanRemote;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -44,10 +46,6 @@ public class ModulManager {
         bean.createModul(id, name, desc, frist, kriterier, quizID);
     }
 
-    public String returnTest() {
-        return this.lookupModulSessionBeanRemote().testMethod();
-    }
-
     private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
         try {
             System.out.println("Lookup Called");
@@ -57,5 +55,11 @@ public class ModulManager {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
+    }
+
+    public ArrayList getModulList() {
+        ModulListPojo m = this.lookupModulSessionBeanRemote().getModulResultList();
+        ArrayList<ModulDataModel> modList = m.getModulListPojo();
+        return modList;
     }
 }
