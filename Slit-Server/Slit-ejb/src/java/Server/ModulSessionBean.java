@@ -65,6 +65,18 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
         persist(modulEntity);
     }
 
+    /*
+    public ArrayList convertResultList() {
+        List<Modul> resultList = em.createNamedQuery("Modul.findAll", Modul.class).getResultList();
+        ArrayList pojoList = new ArrayList();
+        for (Modul m : resultList) {
+            pojoList.add(convertModul(m));
+        }
+        ModulListPojo mp = new ModulListPojo();
+        mp.setPojoModulDM(pojoList);
+        return pojoList;
+    }
+     */
     @Override
     public String testMethod() {
         return "This is a test";

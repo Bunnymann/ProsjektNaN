@@ -6,10 +6,8 @@
 package Server;
 
 import DataModel.BloggDataModel;
-import DataModel.BloggListDataModel;
 import Database.Blogg;
 import Database.Student;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -52,7 +50,7 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
     public void persist(Object object) {
         em.persist(object);
     }
-
+    /*
     public void addManyToOne(Blogg b, int id) {
         Student student = em.find(Student.class, id);
         student.getBloggList().add(b);
@@ -71,7 +69,8 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
         }
         return bloggList;
     }
-
+     */
+ /*
     public BloggListDataModel addToPojoList(int id) {
         Student student = em.find(Student.class, id);
         List<Blogg> sB = student.getBloggList();
@@ -82,5 +81,5 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
 
         return list;
 
-    }
+    }*/
 }
