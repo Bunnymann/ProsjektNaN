@@ -22,23 +22,19 @@ public class BesvarelseManager {
     private InnleveringSessionBeanRemote lookupInnleveringSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (InnleveringSessionBeanRemote) c.lookup("java:comp/env/InnleveringSessionBean");
+            return (InnleveringSessionBeanRemote) c.lookup("java:global/Slit-ejb/InnleveringSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
-    
-    public void createBesvarelse(BesvarelseDataModel m)
-    {
+
+    public void createBesvarelse(BesvarelseDataModel m) {
         this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
     }
-    
-    public String testMethod(){
+
+    public String testMethod() {
         return this.lookupInnleveringSessionBeanRemote().testMethod();
     }
-    
-    
-    
-    
+
 }
