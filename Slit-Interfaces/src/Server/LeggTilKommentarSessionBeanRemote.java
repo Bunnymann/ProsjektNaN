@@ -23,6 +23,5 @@ public interface LeggTilKommentarSessionBeanRemote {
      void leggTilStudentMld (int meldingId, String studentMld);
      
      /*Tilbakemelding convertToTilbakemeldingEntity(TilbakemeldingDataModel tm);
-     
      */
 }

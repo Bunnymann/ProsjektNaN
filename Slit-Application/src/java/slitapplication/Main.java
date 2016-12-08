@@ -5,10 +5,7 @@
  */
 package slitapplication;
 
-import DataModel.BesvarelseDataModel;
-import Framework.BesvarelseManager;
-import java.util.Calendar;
-import java.util.Date;
+import Framework.TilbakmeldingManager;
 
 /**
  *
@@ -18,20 +15,22 @@ public class Main {
 
     
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         //BesvarelseManager manager = new BesvarelseManager();
         //System.out.println(manager.getModulName(1));
         //System.out.println(manager.testMethod());
-        TilbakemeldingManager manager = new TilbakemeldingManager();
-        System.out.println(manager.)
-=======
-        BesvarelseManager manager = new BesvarelseManager();
-        Date d1 = Calendar.getInstance().getTime();
-        BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
+        TilbakmeldingManager manager = new TilbakmeldingManager();
         
-        manager.createBesvarelse(test);
+        manager.getTilbakemeldingById(2);
+               
 
->>>>>>> develop
+        //BesvarelseManager manager = new BesvarelseManager();
+        //Date d1 = Calendar.getInstance().getTime();
+        //BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
+        
+        //manager.createBesvarelse(test);
+
+
     }
 
 
