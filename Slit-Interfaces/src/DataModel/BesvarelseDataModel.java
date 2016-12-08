@@ -17,10 +17,13 @@ public class BesvarelseDataModel implements java.io.Serializable {
     
     private Date dato;
     
+    //private Student brukerID
     private Integer brukerID;
     
+    //private Modul modulID
     private Integer idmodul;
     
+    //private Tilbakemelding meldingID
     private Integer meldingID;
     
     public BesvarelseDataModel() {
@@ -30,7 +33,7 @@ public class BesvarelseDataModel implements java.io.Serializable {
         this.besvarelseID = besvarelseID;
         this.dato = dato;
         this.brukerID = brukerID;
-        this.idmodul = idmodul;
+        this.idmodul = modulID;
         this.meldingID = meldingID;
     }
 
@@ -82,6 +85,8 @@ public class BesvarelseDataModel implements java.io.Serializable {
                 + "dato=" + dato + ", brukerID=" + brukerID + ", '"
                 + "idmodul=" + idmodul + ", meldingID=" + meldingID + '}';
     }
+    
+    
     
    
 }

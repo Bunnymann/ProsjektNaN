@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Innlevering.findAll", query = "SELECT i FROM Innlevering i"),
     @NamedQuery(name = "Innlevering.findByInnlevID", query = "SELECT i FROM Innlevering i WHERE i.innlevID = :innlevID"),
     @NamedQuery(name = "Innlevering.findByDato", query = "SELECT i FROM Innlevering i WHERE i.dato = :dato")})
-public class Besvarelse implements Serializable {
+public class Innlevering implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -49,15 +49,15 @@ public class Besvarelse implements Serializable {
     private Modul modulID;
     @JoinColumn(name = "brukerID", referencedColumnName = "brukerID")
     @ManyToOne
-    private Student brukerID;
+    private Bruker brukerID;
     @JoinColumn(name = "meldingID", referencedColumnName = "meldingID")
     @ManyToOne
     private Tilbakemelding meldingID;
 
-    public Besvarelse() {
+    public Innlevering() {
     }
 
-    public Besvarelse(Integer innlevID) {
+    public Innlevering(Integer innlevID) {
         this.innlevID = innlevID;
     }
 
@@ -85,11 +85,11 @@ public class Besvarelse implements Serializable {
         this.modulID = modulID;
     }
 
-    public Student getBrukerID() {
+    public Bruker getBrukerID() {
         return brukerID;
     }
 
-    public void setBrukerID(Student brukerID) {
+    public void setBrukerID(Bruker brukerID) {
         this.brukerID = brukerID;
     }
 
@@ -111,10 +111,10 @@ public class Besvarelse implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Besvarelse)) {
+        if (!(object instanceof Innlevering)) {
             return false;
         }
-        Besvarelse other = (Besvarelse) object;
+        Innlevering other = (Innlevering) object;
         if ((this.innlevID == null && other.innlevID != null) || (this.innlevID != null && !this.innlevID.equals(other.innlevID))) {
             return false;
         }
