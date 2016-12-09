@@ -59,8 +59,8 @@ public class ModulManager {
         }
     }
     
-    public void modulBean(int id){
-        System.out.println(this.lookupModulSessionBeanRemote().getModulById(1).getModuldesc());
+    public String modulBean(int id){
+     return this.lookupModulSessionBeanRemote().getModulById(1).getModuldesc();
     
     }
     

@@ -5,40 +5,21 @@
  */
 package slitapplication;
 
-<<<<<<< HEAD
-import Framework.ModulManager;
 
-=======
-import DataModel.BesvarelseDataModel;
-import Framework.BesvarelseManager;
-import java.util.Calendar;
-import java.util.Date;
->>>>>>> develop
+import javafx.application.Application;
+import slitapplication.GUI.GUI;
+
 
 /**
  *
  * @author Sindre
  */
 public class Main {
-<<<<<<< HEAD
+
     public static void main(String[] args) {
-       // Application.launch(GUI.class, args);
-       ModulManager  manager = new ModulManager();    
-       manager.modulBean(1);
-    }  
-=======
-
-    
-    public static void main(String[] args) {
-        BesvarelseManager manager = new BesvarelseManager();
-        Date d1 = Calendar.getInstance().getTime();
-        BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
-        
-        manager.createBesvarelse(test);
->>>>>>> develop
-
-    
-
+       Application.launch(GUI.class, args);
+       
+    } 
 
     /*public Stage getPrimaryStage() {
         return primaryStage;
@@ -62,6 +43,6 @@ public class Main {
 
     }*/
 
-    public Main() {
-    }
+
 }
+
