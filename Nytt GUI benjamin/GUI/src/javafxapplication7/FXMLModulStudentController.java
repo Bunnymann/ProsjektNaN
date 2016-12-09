@@ -69,7 +69,7 @@ public class FXMLModulStudentController implements Initializable {
     
     @FXML
     private void startsidestudent(ActionEvent event) throws IOException {
-        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSide.fxml"));
+        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSideStudent.fxml"));
         Scene startsidestudent_scene = new Scene(startsidestudent_parent);
         Stage startsidestudent_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startsidestudent_stage.hide();
