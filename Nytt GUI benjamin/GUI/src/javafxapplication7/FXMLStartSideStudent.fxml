@@ -45,12 +45,12 @@
       </VBox>
       <Pane layoutX="182.0" layoutY="82.0" prefHeight="504.0" prefWidth="777.0">
          <children>
-            <Label alignment="TOP_CENTER" layoutX="24.0" layoutY="14.0" prefHeight="21.0" prefWidth="695.0" text="Påmindelser">
+            <Label alignment="TOP_CENTER" layoutX="24.0" layoutY="14.0" prefHeight="21.0" prefWidth="695.0" text="Påminnelser">
                <font>
                   <Font size="27.0" />
                </font>
             </Label>
-            <TextArea layoutX="5.0" layoutY="53.0" prefHeight="200.0" prefWidth="764.0" text="Her kommer påmindelser fra lærer og hjelpelærer.&#10;&#10;" />
+            <TextArea layoutX="5.0" layoutY="53.0" prefHeight="200.0" prefWidth="764.0" text="Her kommer påminnelser fra lærer og hjelpelærer.&#10;&#10;" />
          </children>
       </Pane>
       <ToolBar prefHeight="60.0" prefWidth="959.0" />
