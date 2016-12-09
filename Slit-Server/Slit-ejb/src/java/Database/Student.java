@@ -6,7 +6,6 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,13 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -44,13 +41,9 @@ public class Student implements Serializable {
     @NotNull
     @Column(name = "brukerID")
     private Integer brukerID;
-    @OneToMany(mappedBy = "brukerID")
-    private List<Blogg> bloggList;
     @JoinColumn(name = "brukerID", referencedColumnName = "brukerID", insertable = false, updatable = false)
     @OneToOne(optional = false)
     private Bruker bruker;
-    @OneToMany(mappedBy = "brukerID")
-    private List<Besvarelse> innleveringList;
 
     public Student() {
     }
@@ -75,30 +68,12 @@ public class Student implements Serializable {
         this.brukerID = brukerID;
     }
 
-    @XmlTransient
-    public List<Blogg> getBloggList() {
-        return bloggList;
-    }
-
-    public void setBloggList(List<Blogg> bloggList) {
-        this.bloggList = bloggList;
-    }
-
     public Bruker getBruker() {
         return bruker;
     }
 
     public void setBruker(Bruker bruker) {
         this.bruker = bruker;
-    }
-
-    @XmlTransient
-    public List<Besvarelse> getInnleveringList() {
-        return innleveringList;
-    }
-
-    public void setInnleveringList(List<Besvarelse> innleveringList) {
-        this.innleveringList = innleveringList;
     }
 
     @Override
