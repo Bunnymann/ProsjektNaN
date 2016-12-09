@@ -21,10 +21,18 @@ public class Main {
         //System.out.println(manager.testMethod());
         TilbakmeldingManager manager = new TilbakmeldingManager();
         
-        manager.getTilbakemeldingById(2);
-               
+        manager.oppdatereTb(6, "oppdatert", "Ny Melding", "oppdatering fungerer");
+        
+        //System.out.println(manager.getTilbakemeldingById(7).toString());
+        //manager.leggTilLærerMld(7, "Hei på deg, dette fungerer.");
+        //manager.leggTilStudentMld(7, "dette fungerte også");
+         //manager.oppretteTb(9, "godkjent fack yeah", "du greide det.", "ubrukelig");
 
         //BesvarelseManager manager = new BesvarelseManager();
+        //Date d1 = Calendar.getInstance().getTime();
+        //BesvarelseDataModel test = new BesvarelseDataModel (5,d1,5,2,5);
+        
+        //manager.createBesvarelse(test);
         //Date d1 = Calendar.getInstance().getTime();
         //BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
         

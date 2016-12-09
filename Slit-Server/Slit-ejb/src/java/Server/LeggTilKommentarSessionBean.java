@@ -84,6 +84,29 @@ private EntityManager em;
         persist (tilbakemeldingEntity);
     }
     
+    @Override
+    public void oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
+        Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
+        
+        tilbakemeldingEntity.setMeldingID(meldingId);
+        tilbakemeldingEntity.setLærerMld(lærerMld);
+        tilbakemeldingEntity.setStatusMld(statusMld);
+        tilbakemeldingEntity.setStudentMld(studentMld);
+        
+        persist (tilbakemeldingEntity);
+    }
+    
+    @Override
+    public void oppdatereTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
+        Tilbakemelding tilbakemeldingEntity  = em.find(Tilbakemelding.class, meldingId);
+ 
+            tilbakemeldingEntity.setLærerMld(lærerMld);
+            tilbakemeldingEntity.setStatusMld(statusMld);
+            tilbakemeldingEntity.setStudentMld(studentMld);
+            
+        persist (tilbakemeldingEntity);
+    }
+    
     public void persist(Object object) {
         em.persist(object);
     }
