@@ -58,4 +58,10 @@ public class ModulManager {
             throw new RuntimeException(ne);
         }
     }
+    
+    public void modulBean(int id){
+        System.out.println(this.lookupModulSessionBeanRemote().getModulById(1).getModuldesc());
+    
+    }
+    
 }

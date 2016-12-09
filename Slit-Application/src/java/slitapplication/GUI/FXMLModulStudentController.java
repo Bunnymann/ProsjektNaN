@@ -81,7 +81,6 @@ public class FXMLModulStudentController implements Initializable {
         startsidestudent_stage.setScene(startsidestudent_scene);
         startsidestudent_stage.show();
     }
-    
      
     
     

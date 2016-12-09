@@ -5,6 +5,7 @@
  */
 package slitapplication.GUI;
 
+import Framework.ModulManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
  */
 public class FXMLModulLærerController implements Initializable {
 
-    
+    ModulManager manager;
         @FXML
     private void moduler(ActionEvent event) throws IOException {
         Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));
@@ -63,6 +64,9 @@ public class FXMLModulLærerController implements Initializable {
         startside_stage.hide();
         startside_stage.setScene(startside_scene);
         startside_stage.show();
+        
+  
+        
     }
     
    
