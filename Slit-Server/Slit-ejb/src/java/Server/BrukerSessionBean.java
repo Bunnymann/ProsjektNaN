@@ -7,7 +7,6 @@ package Server;
 
 import DataModel.BrukerDataModel;
 import Database.Bruker;
-import Database.Student;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -49,13 +48,6 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     @Override
     public BrukerDataModel getBruker(int id) {
         return convertToBrukerPojo(getBrukerByID(id));
-
-    }
-
-    public void updateBruker(int id, int sId) {
-        Bruker b = em.find(Bruker.class, id);
-        b.setStudent(em.find(Student.class, sId));
-        b.
 
     }
 

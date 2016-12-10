@@ -12,29 +12,28 @@ import java.util.Date;
  * @author Marius
  */
 public class BesvarelseDataModel implements java.io.Serializable {
-    
+
     private Integer besvarelseID;
-    
+
     private Date dato;
-    
+
     //private Student brukerID
     private Integer brukerID;
-    
+
     //private Modul modulID
     private Integer idmodul;
-    
+
     //private Tilbakemelding meldingID
     private Integer meldingID;
-    
+
     public BesvarelseDataModel() {
     }
-    
-    public BesvarelseDataModel(Integer besvarelseID, Date dato, Integer brukerID, Integer modulID, Integer meldingID) {
+
+    public BesvarelseDataModel(Integer besvarelseID, Date dato, Integer brukerID, Integer modulID) {
         this.besvarelseID = besvarelseID;
         this.dato = dato;
         this.brukerID = brukerID;
         this.idmodul = modulID;
-        this.meldingID = meldingID;
     }
 
     //Gettere
@@ -85,8 +84,5 @@ public class BesvarelseDataModel implements java.io.Serializable {
                 + "dato=" + dato + ", brukerID=" + brukerID + ", '"
                 + "idmodul=" + idmodul + ", meldingID=" + meldingID + '}';
     }
-    
-    
-    
-   
+
 }

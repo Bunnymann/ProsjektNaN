@@ -5,7 +5,7 @@
  */
 package slitapplication;
 
-import Framework.ModulManager;
+import Framework.KøManager;
 
 /**
  *
@@ -14,8 +14,9 @@ import Framework.ModulManager;
 public class Main {
 
     public static void main(String[] args) {
-        ModulManager manager = new ModulManager();
-        manager.getModulList();
+        KøManager manager = new KøManager();
+        System.out.println(manager.getQueueList().get(1).toString());
+
     }
 
 

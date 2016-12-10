@@ -33,6 +33,10 @@ public class BesvarelseManager {
         this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
     }
 
+    public BesvarelseDataModel getInnleveringByID(int id) {
+        return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
+    }
+
     public String testMethod() {
         return this.lookupInnleveringSessionBeanRemote().testMethod();
     }

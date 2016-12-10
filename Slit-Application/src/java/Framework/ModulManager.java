@@ -57,6 +57,7 @@ public class ModulManager {
         }
     }
 
+    //return list containing all the modules from db
     public ArrayList getModulList() {
         ModulListPojo m = this.lookupModulSessionBeanRemote().getModulResultList();
         ArrayList<ModulDataModel> modList = m.getModulListPojo();

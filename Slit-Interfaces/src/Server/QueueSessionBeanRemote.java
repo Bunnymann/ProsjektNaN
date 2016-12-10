@@ -5,7 +5,7 @@
  */
 package Server;
 
-import DataModel.BrukerDataModel;
+import DataModel.KøList;
 import javax.ejb.Remote;
 
 /**
@@ -13,7 +13,7 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface BrukerSessionBeanRemote {
+public interface QueueSessionBeanRemote {
 
-    BrukerDataModel getBruker(int id);
+    KøList getQueuePojo();
 }
