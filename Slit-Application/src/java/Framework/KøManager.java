@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import DataModel.BesvarelseDataModel;
+import DataModel.KøList;
 import Server.QueueSessionBeanRemote;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -33,4 +35,10 @@ public class KøManager {
         return this.lookupQueueSessionBeanRemote().getQueuePojo().getKøList();
     }
 
+    public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
+        if (kL.containsInnlevID(kL.getKøList(), innID)) {
+            BesvarelseManager bManager = new BesvarelseManager();
+            bManager.getInnleveringByID(innID)
+        }
+    }
 }
