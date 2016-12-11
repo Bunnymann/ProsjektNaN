@@ -36,9 +36,15 @@ public class KøManager {
     }
 
     public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
+        BesvarelseDataModel bDm = null;
         if (kL.containsInnlevID(kL.getKøList(), innID)) {
             BesvarelseManager bManager = new BesvarelseManager();
-            bManager.getInnleveringByID(innID)
+            bDm = bManager.getInnleveringByID(innID);
         }
+        return bDm;
+    }
+
+    public KøList getQueue() {
+        return this.lookupQueueSessionBeanRemote().getQueuePojo();
     }
 }

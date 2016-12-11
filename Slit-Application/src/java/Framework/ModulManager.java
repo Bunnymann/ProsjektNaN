@@ -8,7 +8,7 @@ package Framework;
 import DataModel.ModulDataModel;
 import DataModel.ModulListPojo;
 import Server.ModulSessionBeanRemote;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -58,9 +58,9 @@ public class ModulManager {
     }
 
     //return list containing all the modules from db
-    public ArrayList getModulList() {
+    public HashMap getModulList() {
         ModulListPojo m = this.lookupModulSessionBeanRemote().getModulResultList();
-        ArrayList<ModulDataModel> modList = m.getModulListPojo();
-        return modList;
+        HashMap<String, ModulDataModel> modMap = m.getModulListPojo();
+        return modMap;
     }
 }
