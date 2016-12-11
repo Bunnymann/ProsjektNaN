@@ -9,6 +9,8 @@ package Server;
 import DataModel.TilbakemeldingDataModel;
 import Database.Innlevering;
 import Database.Tilbakemelding;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -116,6 +118,15 @@ private EntityManager em;
      
         persist (tilbakemeldingEntity);
     }
+    
+    /*@Override
+    public void leggTilBesvarList (int meldingId, int besvarelseId) {
+        Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
+        Innlevering innleveringEntity = em.find(Innlevering.class, besvarelseId);
+        List <Innlevering> innlevering = new ArrayList <Innlevering>();
+        innlevering.add(meldingId);
+    }
+    */
     
     public void persist(Object object) {
         em.persist(object);

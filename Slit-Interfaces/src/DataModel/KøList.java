@@ -35,7 +35,7 @@ public class KøList implements java.io.Serializable {
         return false;
     }
 
-    public KøDatamodel getFirstKøModelFromKø(Integer innID) {
+   /* public KøDatamodel getFirstKøModelFromKø(Integer innID) {
         Iterator<KøDatamodel> i = this.køList.iterator();
         for (KøDatamodel k : this.køList) {
             if (i.next().getInnlevID().equals(innID)) {
@@ -45,4 +45,5 @@ public class KøList implements java.io.Serializable {
         }
 
     }
+*/
 }
