@@ -57,7 +57,7 @@
                                                 <VBox layoutY="29.0" prefHeight="501.0" prefWidth="137.0" spacing="20.0">
                                                     <children>
                                                         <Button layoutY="29.0" mnemonicParsing="false" onAction="#modul1" prefHeight="31.0" prefWidth="126.0" text="Modul 1" />
-                                                        <Button layoutY="69.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 2" />
+                                                        <Button layoutY="69.0" mnemonicParsing="false" onAction="#modul2" prefHeight="31.0" prefWidth="127.0" text="Modul 2" />
                                                         <Button layoutY="113.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 3" />
                                                         <Button layoutY="153.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 4" />
                                                         <Button layoutY="191.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 5" />

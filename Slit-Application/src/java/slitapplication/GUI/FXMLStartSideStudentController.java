@@ -35,6 +35,7 @@ public class FXMLStartSideStudentController implements Initializable {
         modulerS_stage.setScene(modulerS_scene);
         modulerS_stage.show();
         
+        
     }
     
      @FXML

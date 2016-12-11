@@ -16,9 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import Framework.ModulManager;
+import Resources.ModulHash;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
 
@@ -31,28 +30,34 @@ import javafx.scene.control.TextArea;
  */
 public class FXMLModulStudentController implements Initializable {
 
-    ModulDataModel modul;
-    HashMap<Integer, ModulDataModel> moduler = new HashMap<>();
-    
-    public void setModul(ModulDataModel m){
-        this.modul = m;
+ModulHash m;
+
+    public FXMLModulStudentController() {
+        this.m = new ModulHash();
     }
-    
-    //Henter Modulen fra modulmanageren. 
-    public ModulDataModel getFromDb(int id){
-        ModulManager manager = new ModulManager();
-        return manager.getModul(id);
-    }
-    
-    // Setter inn modulene fra arraylisten i modulmanger i Hashmapen moduler. 
-    public void settModulerIHashMap(){
-        ModulManager manager = new ModulManager();
-        this.moduler = manager.getModulList();            
-    }
-    //henter modul objekter fra Shapmappen og viser den du vil ha. 
-    public void hentModulObjekter (int i){
-        ModulDataModel funn = moduler.get(i);
-    }
+
+
+//    
+//    public void setModul(ModulDataModel m){
+//        this.modul = m;
+//    }
+//    
+//    //Henter Modulen fra modulmanageren. 
+//    public ModulDataModel getFromDb(int id){
+//        ModulManager manager = new ModulManager();
+//        return manager.getModul(id);
+//    }
+//    
+//    // Setter inn modulene fra arraylisten i modulmanger i Hashmapen moduler. 
+//    public void settModulerIHashMap(){
+//        ModulManager manager = new ModulManager();
+//        this.moduler = manager.getModulList();            
+//    }
+//    //henter modul objekter fra haspmappen og viser den du vil ha. 
+//    public ModulDataModel hentModulObjekter (String key){
+//        ModulDataModel funn = moduler.get(key);
+//        return funn;
+//    }
     
       
     @FXML
@@ -117,7 +122,21 @@ public class FXMLModulStudentController implements Initializable {
     private void modul1 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 1");
         ModulInfo.appendText("\n");
-        ModulInfo.appendText(hentModulObjekter(1));
+        ModulDataModel modul = m.getModulByKey("modul 1");
+        ModulInfo.appendText(modul.getModuldesc());
+        
+     /*   
+        setModul(getFromDb(1));
+        ModulInfo.appendText("Det du skal gjøre i modulen er: " + modul.getModuldesc());
+     */ 
+    }
+    
+    @FXML
+    private void modul2 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 2");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 2");
+        ModulInfo.appendText(modul.getModuldesc());
         
      /*   
         setModul(getFromDb(1));
