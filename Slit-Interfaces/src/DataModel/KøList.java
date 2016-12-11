@@ -33,15 +33,5 @@ public class KøList implements java.io.Serializable {
         }
         return false;
     }
-
-    public KøDatamodel getFirstKøModelFromKø(Integer innID) {
-        KøDatamodel result = null;
-        for (KøDatamodel k : this.køList) {
-            if (k.getInnlevID().equals(innID)) {
-                result = k;
-                break;
-            }
-        }
-        return result;
-    }
+    
 }

@@ -5,8 +5,8 @@
  */
 package Framework;
 
-import DataModel.BesvarelseDataModel;
-import Server.InnleveringSessionBeanRemote;
+import DataModel.BloggDataModel;
+import Server.BloggSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -15,25 +15,24 @@ import javax.naming.NamingException;
 
 /**
  *
- * @author Marius
+ * @author Sindre
  */
-public class BesvarelseManager {
+public class BloggManager {
 
-    private InnleveringSessionBeanRemote lookupInnleveringSessionBeanRemote() {
+    public void creatBlogg(int bloggID, String bloggLink, String studentNr) {
+        BloggDataModel bm = new BloggDataModel();
+        bm.fixObject(bloggID, bloggLink, studentNr);
+        this.lookupBloggSessionBeanRemote().createrBlogg(bm);
+    }
+
+    private BloggSessionBeanRemote lookupBloggSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (InnleveringSessionBeanRemote) c.lookup("java:global/Slit-ejb/InnleveringSessionBean");
+            return (BloggSessionBeanRemote) c.lookup("java:global/Slit-ejb/BloggSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
 
-    public void createBesvarelse(BesvarelseDataModel m) {
-        this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
-    }
-
-    public BesvarelseDataModel getInnleveringByID(int id) {
-        return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
-    }
 }
