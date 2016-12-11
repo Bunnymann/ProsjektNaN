@@ -6,7 +6,6 @@
 package DataModel;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -36,14 +35,14 @@ public class KøList implements java.io.Serializable {
     }
 /*
     public KøDatamodel getFirstKøModelFromKø(Integer innID) {
-        Iterator<KøDatamodel> i = this.køList.iterator();
+        KøDatamodel result = null;
         for (KøDatamodel k : this.køList) {
-            if (i.next().getInnlevID().equals(innID)) {
-                return k;
+            if (k.getInnlevID().equals(innID)) {
+                result = k;
+                break;
             }
-            return k;
         }
-
+        return result;
     }
 */
 }

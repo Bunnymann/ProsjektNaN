@@ -5,7 +5,7 @@
  */
 package DataModel;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -13,17 +13,17 @@ import java.util.ArrayList;
  */
 public class ModulListPojo implements java.io.Serializable {
 
-    ArrayList modulListPojo;
+    HashMap<String, ModulDataModel> modulMapPojo;
 
-    public ModulListPojo(ArrayList modulListPojo) {
-        this.modulListPojo = modulListPojo;
+    public ModulListPojo(HashMap modulListPojo) {
+        this.modulMapPojo = modulListPojo;
     }
 
-    public ArrayList getModulListPojo() {
-        return modulListPojo;
+    public HashMap getModulListPojo() {
+        return modulMapPojo;
     }
 
-    public void setModulListPojo(ArrayList modulListPojo) {
-        this.modulListPojo = modulListPojo;
+    public void setModulListPojo(HashMap modulMap) {
+        this.modulMapPojo = modulMap;
     }
 }

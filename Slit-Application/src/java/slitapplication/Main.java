@@ -6,15 +6,18 @@
 package slitapplication;
 
 
+
 import Framework.ModulManager;
 import javafx.application.Application;
 import slitapplication.GUI.GUI;
+
 
 
 /**
  *
  * @author Sindre
  */
+
 
 
 public class Main {
