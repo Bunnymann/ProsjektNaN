@@ -21,7 +21,7 @@ public class Main {
         //System.out.println(manager.testMethod());
         TilbakmeldingManager manager = new TilbakmeldingManager();
         
-        manager.oppdatereTb(6, "oppdatert", "Ny Melding", "oppdatering fungerer");
+        manager.kobleTbTilBesvar(6,2);
         
         //System.out.println(manager.getTilbakemeldingById(7).toString());
         //manager.leggTilLærerMld(7, "Hei på deg, dette fungerer.");

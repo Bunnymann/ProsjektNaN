@@ -59,4 +59,9 @@ public class TilbakmeldingManager {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.oppdatereTb(meldingId, lærerMld, statusMld, studentMld);
     }
+    
+    public void kobleTbTilBesvar (Integer meldingId, Integer bId) {
+        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
+        bean.kobleTbTilBesvar(meldingId, bId);
+    }
 }

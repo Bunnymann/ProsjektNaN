@@ -7,6 +7,7 @@ package Server;
 
 
 import DataModel.TilbakemeldingDataModel;
+import Database.Innlevering;
 import Database.Tilbakemelding;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -104,6 +105,15 @@ private EntityManager em;
             tilbakemeldingEntity.setStatusMld(statusMld);
             tilbakemeldingEntity.setStudentMld(studentMld);
             
+        persist (tilbakemeldingEntity);
+    }
+    
+    @Override
+    public void kobleTbTilBesvar (int meldingId, int bId) {
+        Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
+        Innlevering innleveringEntity = em.find(Innlevering.class, bId);
+        innleveringEntity.setMeldingID(tilbakemeldingEntity);
+     
         persist (tilbakemeldingEntity);
     }
     
