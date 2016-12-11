@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import Framework.ModulManager;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
 
@@ -31,16 +32,29 @@ import javafx.scene.control.TextArea;
 public class FXMLModulStudentController implements Initializable {
 
     ModulDataModel modul;
+    HashMap<Integer, ModulDataModel> moduler = new HashMap<>();
     
     public void setModul(ModulDataModel m){
         this.modul = m;
     }
     
+    //Henter Modulen fra modulmanageren. 
     public ModulDataModel getFromDb(int id){
         ModulManager manager = new ModulManager();
         return manager.getModul(id);
     }
     
+    // Setter inn modulene fra arraylisten i modulmanger i Hashmapen moduler. 
+    public void settModulerIHashMap(){
+        ModulManager manager = new ModulManager();
+        this.moduler = manager.getModulList();            
+    }
+    //henter modul objekter fra Shapmappen og viser den du vil ha. 
+    public void hentModulObjekter (int i){
+        ModulDataModel funn = moduler.get(i);
+    }
+    
+      
     @FXML
     public TextArea ModulInfo;
         
@@ -103,14 +117,23 @@ public class FXMLModulStudentController implements Initializable {
     private void modul1 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 1");
         ModulInfo.appendText("\n");
+        ModulInfo.appendText(hentModulObjekter(1));
         
+     /*   
         setModul(getFromDb(1));
         ModulInfo.appendText("Det du skal gjøre i modulen er: " + modul.getModuldesc());
-       
-        
-        
+     */ 
     }
     
+ // Sjekker opp hvor mange elemeter er i den nye arraylisten, for å se om de har blitt lagt til. 
+/*    @FXML
+    private void Test (ActionEvent event) throws IOException { 
+        System.out.println(moduler.size());
+        settModulerIArrayList();
+        System.out.println("New Size: "+ moduler.size());
+        
+    }
+*/
     
    @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -35,10 +35,10 @@ public class KøManager {
         return this.lookupQueueSessionBeanRemote().getQueuePojo().getKøList();
     }
 
-    public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
-        if (kL.containsInnlevID(kL.getKøList(), innID)) {
-            BesvarelseManager bManager = new BesvarelseManager();
-            bManager.getInnleveringByID(innID)
-        }
-    }
+//    public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
+//        if (kL.containsInnlevID(kL.getKøList(), innID)) {
+//            BesvarelseManager bManager = new BesvarelseManager();
+//            bManager.getInnleveringByID(innID);
+//        }
+//    }
 }

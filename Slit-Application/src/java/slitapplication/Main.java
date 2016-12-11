@@ -22,8 +22,6 @@ public class Main {
 
     public static void main(String[] args) {
       Application.launch(GUI.class, args);
-      ModulManager manager = new ModulManager();
-      System.out.println(manager.getModul(1).getModuldesc());
     } 
 
     /*public Stage getPrimaryStage() {

@@ -36,3 +36,4 @@ public class BesvarelseManager {
     public BesvarelseDataModel getInnleveringByID(int id) {
         return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
     }
+}
