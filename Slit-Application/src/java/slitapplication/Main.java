@@ -5,7 +5,7 @@
  */
 package slitapplication;
 
-import Framework.KøManager;
+import Framework.TilbakmeldingManager;
 
 /**
  *
@@ -14,8 +14,30 @@ import Framework.KøManager;
 public class Main {
 
     public static void main(String[] args) {
-        KøManager manager = new KøManager();
-        System.out.println(manager.getQueueList().get(1).toString());
+
+
+        //BesvarelseManager manager = new BesvarelseManager();
+        //System.out.println(manager.getModulName(1));
+        //System.out.println(manager.testMethod());
+        TilbakmeldingManager manager = new TilbakmeldingManager();
+        
+        manager.kobleTbTilBesvar(6,2);
+        
+        //System.out.println(manager.getTilbakemeldingById(7).toString());
+        //manager.leggTilLærerMld(7, "Hei på deg, dette fungerer.");
+        //manager.leggTilStudentMld(7, "dette fungerte også");
+         //manager.oppretteTb(9, "godkjent fack yeah", "du greide det.", "ubrukelig");
+
+        //BesvarelseManager manager = new BesvarelseManager();
+        //Date d1 = Calendar.getInstance().getTime();
+        //BesvarelseDataModel test = new BesvarelseDataModel (5,d1,5,2,5);
+        
+        //manager.createBesvarelse(test);
+        //Date d1 = Calendar.getInstance().getTime();
+        //BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
+        
+        //manager.createBesvarelse(test);
+
 
     }
 
