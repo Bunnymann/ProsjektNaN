@@ -6,7 +6,9 @@
 package Framework;
 
 import DataModel.BesvarelseDataModel;
-import Server.InnleveringSessionBeanRemote;
+import DataModel.KøList;
+import Server.QueueSessionBeanRemote;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -15,24 +17,28 @@ import javax.naming.NamingException;
 
 /**
  *
- * @author Marius
+ * @author Sindre
  */
-public class BesvarelseManager {
+public class KøManager {
 
-    private InnleveringSessionBeanRemote lookupInnleveringSessionBeanRemote() {
+    private QueueSessionBeanRemote lookupQueueSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (InnleveringSessionBeanRemote) c.lookup("java:global/Slit-ejb/InnleveringSessionBean");
+            return (QueueSessionBeanRemote) c.lookup("java:global/Slit-ejb/QueueSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
 
-    public void createBesvarelse(BesvarelseDataModel m) {
-        this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
+    public ArrayList getQueueList() {
+        return this.lookupQueueSessionBeanRemote().getQueuePojo().getKøList();
     }
 
-    public BesvarelseDataModel getInnleveringByID(int id) {
-        return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
+    public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
+        if (kL.containsInnlevID(kL.getKøList(), innID)) {
+            BesvarelseManager bManager = new BesvarelseManager();
+            bManager.getInnleveringByID(innID)
+        }
     }
+}

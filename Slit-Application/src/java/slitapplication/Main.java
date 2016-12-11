@@ -5,7 +5,11 @@
  */
 package slitapplication;
 
+<<<<<<< HEAD
 import Framework.TilbakmeldingManager;
+=======
+import Framework.KøManager;
+>>>>>>> develop
 
 /**
  *
@@ -13,8 +17,8 @@ import Framework.TilbakmeldingManager;
  */
 public class Main {
 
-    
     public static void main(String[] args) {
+<<<<<<< HEAD
 
         //BesvarelseManager manager = new BesvarelseManager();
         //System.out.println(manager.getModulName(1));
@@ -38,6 +42,10 @@ public class Main {
         
         //manager.createBesvarelse(test);
 
+=======
+        KøManager manager = new KøManager();
+        System.out.println(manager.getQueueList().get(1).toString());
+>>>>>>> develop
 
     }
 
@@ -63,7 +71,6 @@ public class Main {
         primaryStage.show();
 
     }*/
-
     public Main() {
     }
 }
