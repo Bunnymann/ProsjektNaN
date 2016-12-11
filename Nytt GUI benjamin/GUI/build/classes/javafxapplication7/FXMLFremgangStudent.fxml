@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="950.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication7.FXMLFremgangStudentController">
    <children>
-      <VBox layoutX="10.0" layoutY="88.0" prefHeight="504.0" prefWidth="159.0">
+      <VBox layoutX="10.0" layoutY="88.0" prefHeight="263.0" prefWidth="159.0">
          <children>
             <Button lineSpacing="2.0" mnemonicParsing="false" onAction="#brukereS" prefHeight="50.0" prefWidth="159.0" text="Brukere">
                <font>
@@ -55,10 +55,15 @@
          </children>
       </Pane>
       <ToolBar prefHeight="60.0" prefWidth="959.0" />
-      <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="1.0" onMouseClicked="#startsidestudent" prefHeight="60.0" prefWidth="959.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
+      <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="1.0" prefHeight="60.0" prefWidth="959.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
+      <Button layoutX="10.0" layoutY="528.0" mnemonicParsing="false" onAction="#startsidestudent" prefHeight="50.0" prefWidth="159.0" text="Startside">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
