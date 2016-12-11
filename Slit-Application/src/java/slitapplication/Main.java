@@ -5,7 +5,7 @@
  */
 package slitapplication;
 
-
+import Framework.ModulManager;
 import javafx.application.Application;
 import slitapplication.GUI.GUI;
 
@@ -14,16 +14,24 @@ import slitapplication.GUI.GUI;
  *
  * @author Sindre
  */
+
+
+
+
 public class Main {
+    
 
     public static void main(String[] args) {
-       Application.launch(GUI.class, args);
-       
+      Application.launch(GUI.class, args);
+      ModulManager manager = new ModulManager();
+      System.out.println(manager.getModul(1).getModuldesc());
     } 
 
     /*public Stage getPrimaryStage() {
         return primaryStage;
     }
+    
+    
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;

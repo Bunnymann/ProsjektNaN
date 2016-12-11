@@ -5,6 +5,8 @@
  */
 package slitapplication.GUI;
 
+
+import DataModel.ModulDataModel;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,9 +30,20 @@ import javafx.scene.control.TextArea;
  */
 public class FXMLModulStudentController implements Initializable {
 
-    ModulManager manager ;   
+    ModulDataModel modul;
     
-    @FXML public static TextArea ModulInfo; 
+    public void setModul(ModulDataModel m){
+        this.modul = m;
+    }
+    
+    public ModulDataModel getFromDb(int id){
+        ModulManager manager = new ModulManager();
+        return manager.getModul(id);
+    }
+    
+    @FXML
+    public TextArea ModulInfo;
+        
     
     
     
@@ -84,18 +97,28 @@ public class FXMLModulStudentController implements Initializable {
         startsidestudent_stage.setScene(startsidestudent_scene);
         startsidestudent_stage.show();
     }
+        
     
     @FXML
     private void modul1 (ActionEvent event) throws IOException {    
-        ModulInfo.appendText(manager.modulBean(1));
-    
-    }
+        ModulInfo.setText("Her er info om Modul 1");
+        ModulInfo.appendText("\n");
         
+        setModul(getFromDb(1));
+        ModulInfo.appendText("Det du skal gjøre i modulen er: " + modul.getModuldesc());
+       
+        
+        
+    }
     
-       @Override
+    
+   @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
     
+    
+    
 }
+

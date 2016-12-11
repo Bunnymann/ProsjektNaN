@@ -59,8 +59,10 @@ public class ModulManager {
         }
     }
     
-    public String modulBean(int id){
-     return this.lookupModulSessionBeanRemote().getModulById(1).getModuldesc();
+    public String getModulDescByID(int id){
+     return this.lookupModulSessionBeanRemote().getModulById(id).getModuldesc();
+     
+     
     
     }
     

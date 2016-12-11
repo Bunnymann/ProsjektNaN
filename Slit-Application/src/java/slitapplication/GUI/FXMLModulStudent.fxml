@@ -72,7 +72,7 @@
                                         </ScrollPane>
                                         <Pane layoutX="131.0" layoutY="28.0" prefHeight="482.0" prefWidth="646.0">
                                             <children>
-                                                <TextArea fx:id="ModulInfo" editable="true" layoutY="1.0" prefHeight="482.0" prefWidth="646.0" />
+                                                <TextArea fx:id="ModulInfo" editable="false" layoutY="1.0" prefHeight="482.0" prefWidth="646.0" />
                                             </children>
                                         </Pane>
                                     </children>
