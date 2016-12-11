@@ -8,7 +8,7 @@ package Server;
 import DataModel.ModulDataModel;
 import DataModel.ModulListPojo;
 import Database.Modul;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -71,12 +71,13 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
     @Override
     public ModulListPojo getModulResultList() {
         List<Modul> modulList = em.createNamedQuery("Modul.findAll", Modul.class).getResultList();
-        ArrayList<ModulDataModel> modulePojoList = new ArrayList();
+        HashMap<String, ModulDataModel> modulePojoMap = new HashMap();
         for (Modul m : modulList) {
-            modulePojoList.add(convertModul(m));
+            ModulDataModel mD = convertModul(m);
+            modulePojoMap.put(mD.getModulname(), mD);
         }
-        ModulListPojo listPojo = new ModulListPojo(modulePojoList);
-        return listPojo;
+        ModulListPojo mapPojo = new ModulListPojo(modulePojoMap);
+        return mapPojo;
 
     }
 

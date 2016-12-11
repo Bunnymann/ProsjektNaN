@@ -5,7 +5,8 @@
  */
 package slitapplication;
 
-import Framework.KøManager;
+import Framework.ModulManager;
+import java.util.HashMap;
 
 /**
  *
@@ -14,8 +15,9 @@ import Framework.KøManager;
 public class Main {
 
     public static void main(String[] args) {
-        KøManager manager = new KøManager();
-        System.out.println(manager.getQueueList().get(1).toString());
+        ModulManager m = new ModulManager();
+        HashMap modulMap = m.getModulList();
+        System.out.println(modulMap.entrySet());
 
     }
 
