@@ -9,8 +9,6 @@ package Server;
 import DataModel.TilbakemeldingDataModel;
 import Database.Innlevering;
 import Database.Tilbakemelding;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -87,8 +85,8 @@ private EntityManager em;
         persist (tilbakemeldingEntity);
     }
     
-    @Override
-    public void oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
+  
+    public Tilbakemelding oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
         
         tilbakemeldingEntity.setMeldingID(meldingId);
@@ -96,7 +94,8 @@ private EntityManager em;
         tilbakemeldingEntity.setStatusMld(statusMld);
         tilbakemeldingEntity.setStudentMld(studentMld);
         
-        persist (tilbakemeldingEntity);
+        return tilbakemeldingEntity;
+        //persist (tilbakemeldingEntity);
     }
     
     @Override
@@ -111,13 +110,19 @@ private EntityManager em;
     }
     
     @Override
-    public void kobleTbTilBesvar (int meldingId, int bId) {
-        Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
+    public void kobleTbTilBesvar (int bId, TilbakemeldingDataModel tb) {
+        //Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
         Innlevering innleveringEntity = em.find(Innlevering.class, bId);
-        innleveringEntity.setMeldingID(tilbakemeldingEntity);
+        Tilbakemelding tE = this.convertToTilbakemeldingEntity(tb);
+        persist(tE);
+        innleveringEntity.setMeldingID(tE);
      
-        persist (tilbakemeldingEntity);
+        
+        persist (innleveringEntity);
     }
+    
+    
+    
     
     /*@Override
     public void leggTilBesvarList (int meldingId, int besvarelseId) {
