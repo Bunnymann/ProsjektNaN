@@ -68,16 +68,17 @@ public class FXMLStartSideStudentController implements Initializable {
         bloggS_stage.show();
     }
     
-    /*@FXML
-    private void startsidestudent(ActionEvent event) throws IOException {
-        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSide.fxml"));
-        Scene startsidestudent_scene = new Scene(startsidestudent_parent);
-        Stage startsidestudent_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        startsidestudent_stage.hide();
-        startsidestudent_stage.setScene(startsidestudent_scene);
-        startsidestudent_stage.show();
-    }
-    */
+    
+//    private void startsidestudent(ActionEvent event) throws IOException {
+//        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSide.fxml"));
+//        Scene startsidestudent_scene = new Scene(startsidestudent_parent);
+//        Stage startsidestudent_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        startsidestudent_stage.hide();
+//        startsidestudent_stage.setScene(startsidestudent_scene);
+//        startsidestudent_stage.show();
+//    }
+//    
+    
     
     /**
      * Initializes the controller class.

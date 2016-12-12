@@ -46,6 +46,14 @@
                                         <Font size="23.0" />
                                     </font>
                                 </Button>
+                        <Button mnemonicParsing="false" onAction="#startSideStudent" prefHeight="39.0" prefWidth="159.0" text="StartSide">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="185.0" />
+                           </VBox.margin>
+                        </Button>
                             </children>
                         </VBox>
                         <Pane layoutX="171.0" layoutY="75.0" prefHeight="504.0" prefWidth="777.0">
@@ -58,14 +66,14 @@
                                                     <children>
                                                         <Button layoutY="29.0" mnemonicParsing="false" onAction="#modul1" prefHeight="31.0" prefWidth="126.0" text="Modul 1" />
                                                         <Button layoutY="69.0" mnemonicParsing="false" onAction="#modul2" prefHeight="31.0" prefWidth="127.0" text="Modul 2" />
-                                                        <Button layoutY="113.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 3" />
-                                                        <Button layoutY="153.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 4" />
-                                                        <Button layoutY="191.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Modul 5" />
-                                                        <Button layoutY="230.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Modul 6" />
-                                                        <Button layoutY="268.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Modul 7" />
-                                                        <Button layoutY="305.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Modul 8" />
-                                                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Modul 9" />
-                                                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Modul 10" />
+                                                        <Button layoutY="113.0" mnemonicParsing="false" onAction="#modul3" prefHeight="31.0" prefWidth="127.0" text="Modul 3" />
+                                                        <Button layoutY="153.0" mnemonicParsing="false" onAction="#modul4" prefHeight="31.0" prefWidth="127.0" text="Modul 4" />
+                                                        <Button layoutY="191.0" mnemonicParsing="false" onAction="#modul5" prefHeight="31.0" prefWidth="127.0" text="Modul 5" />
+                                                        <Button layoutY="230.0" mnemonicParsing="false" onAction="#modul6" prefHeight="31.0" prefWidth="126.0" text="Modul 6" />
+                                                        <Button layoutY="268.0" mnemonicParsing="false" onAction="#modul7" prefHeight="31.0" prefWidth="126.0" text="Modul 7" />
+                                                        <Button layoutY="305.0" mnemonicParsing="false" onAction="#modul8" prefHeight="31.0" prefWidth="125.0" text="Modul 8" />
+                                                        <Button mnemonicParsing="false" onAction="#modul9" prefHeight="31.0" prefWidth="125.0" text="Modul 9" />
+                                                        <Button mnemonicParsing="false" onAction="#modul10" prefHeight="31.0" prefWidth="125.0" text="Modul 10" />
                                                     </children>
                                                 </VBox>
                                             </content>
@@ -81,7 +89,7 @@
                         </Pane>
                         <ToolBar prefHeight="71.0" prefWidth="989.0">
                             <items>
-                                <Label alignment="TOP_CENTER" onMouseClicked="#startsidestudent" prefHeight="57.0" prefWidth="926.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
+                                <Label alignment="TOP_CENTER" prefHeight="57.0" prefWidth="926.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
                                     <font>
                                         <Font size="35.0" />
                                     </font>

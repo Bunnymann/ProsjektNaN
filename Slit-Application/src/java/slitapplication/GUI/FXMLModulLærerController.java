@@ -5,7 +5,8 @@
  */
 package slitapplication.GUI;
 
-import Framework.ModulManager;
+import DataModel.ModulDataModel;
+import Resources.ModulHash;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -25,7 +27,17 @@ import javafx.stage.Stage;
  */
 public class FXMLModulLærerController implements Initializable {
 
-    ModulManager manager;
+    ModulHash m;
+
+    public FXMLModulLærerController() {
+        this.m = new ModulHash();
+    }
+    
+    @FXML
+    public TextArea modulInfoL;
+        
+    
+    
         @FXML
     private void moduler(ActionEvent event) throws IOException {
         Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));
@@ -64,11 +76,199 @@ public class FXMLModulLærerController implements Initializable {
         startside_stage.hide();
         startside_stage.setScene(startside_scene);
         startside_stage.show();
-        
-  
+       
+    }
+   
+    
+    @FXML
+    private void modul1 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 1");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 1");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
         
     }
     
+    @FXML
+    private void modul2 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 2");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 2");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul3 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 3");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 3");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul4 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 4");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 4");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul5 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 5");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 5");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul6 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 6");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 6");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul7 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 7");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 7");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul8 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 8");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 8");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul9 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 9");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 9");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
+    
+    @FXML
+    private void modul10 (ActionEvent event) throws IOException {    
+        modulInfoL.setText("Her er info om Modul 10");
+        modulInfoL.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 10");
+        modulInfoL.appendText(modul.getModuldesc());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Kriteriene for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulKriterier());
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText("Fristen for modulen er");
+        modulInfoL.appendText("\n");
+        modulInfoL.appendText(modul.getModulFrist());
+        
+    }
    
     /**
      * Initializes the controller class.

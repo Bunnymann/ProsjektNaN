@@ -108,8 +108,8 @@ ModulHash m;
     }
     
     @FXML
-    private void startsidestudent(ActionEvent event) throws IOException {
-        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSide.fxml"));
+    private void startSideStudent(ActionEvent event) throws IOException {
+        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSideStudent.fxml"));
         Scene startsidestudent_scene = new Scene(startsidestudent_parent);
         Stage startsidestudent_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startsidestudent_stage.hide();
@@ -124,11 +124,17 @@ ModulHash m;
         ModulInfo.appendText("\n");
         ModulDataModel modul = m.getModulByKey("modul 1");
         ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
         
-     /*   
-        setModul(getFromDb(1));
-        ModulInfo.appendText("Det du skal gjøre i modulen er: " + modul.getModuldesc());
-     */ 
     }
     
     @FXML
@@ -137,11 +143,170 @@ ModulHash m;
         ModulInfo.appendText("\n");
         ModulDataModel modul = m.getModulByKey("modul 2");
         ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
         
-     /*   
-        setModul(getFromDb(1));
-        ModulInfo.appendText("Det du skal gjøre i modulen er: " + modul.getModuldesc());
-     */ 
+    }
+    
+     @FXML
+    private void modul3 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 3");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 3");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul4 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 4");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 4");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+    
+     @FXML
+    private void modul5 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 5");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 5");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul6 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 6");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 6");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul7 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 7");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 7");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul8 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 8");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 8");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul9 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 9");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 9");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
+    }
+    
+     @FXML
+    private void modul10 (ActionEvent event) throws IOException {    
+        ModulInfo.setText("Her er info om Modul 10");
+        ModulInfo.appendText("\n");
+        ModulDataModel modul = m.getModulByKey("modul 10");
+        ModulInfo.appendText(modul.getModuldesc());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Kriteriene for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulKriterier());
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText("Fristen for modulen er");
+        ModulInfo.appendText("\n");
+        ModulInfo.appendText(modul.getModulFrist());
+        
     }
     
  // Sjekker opp hvor mange elemeter er i den nye arraylisten, for å se om de har blitt lagt til. 

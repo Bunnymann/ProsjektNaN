@@ -42,12 +42,12 @@
                   <Font size="23.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#hjem" prefHeight="27.0" prefWidth="161.0" text="Hjem">
+            <Button mnemonicParsing="false" onAction="#startSideStudent" prefHeight="27.0" prefWidth="161.0" text="StartSide">
                <VBox.margin>
                   <Insets top="185.0" />
                </VBox.margin>
                <font>
-                  <Font size="23.0" />
+                  <Font size="19.0" />
                </font>
             </Button>
          </children>
