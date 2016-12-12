@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitapplication.GUI.FXMLModulLærerController">
+   <children>
+      <Label layoutX="248.0" layoutY="14.0" text="Velg hvilken modul du vil legge til" underline="true" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="modulIDFelt" layoutX="308.0" layoutY="78.0" prefHeight="31.0" prefWidth="239.0" promptText="Skriv modul nummret med tall" />
+      <Label layoutX="14.0" layoutY="83.0" text="Hvilket modul numer skal legges til" />
+      <Label layoutX="14.0" layoutY="164.0" text="Hva skal gjøres i modulen?" />
+      <TextArea fx:id="modulDescFelt" layoutX="308.0" layoutY="124.0" prefHeight="101.0" prefWidth="239.0" promptText="Skriv hva som skal gjører i modulen" />
+      <Label layoutX="14.0" layoutY="245.0" text="Hvor lang tid har du på å gjøre modulen?" />
+      <TextField fx:id="modulTidfelt" layoutX="308.0" layoutY="240.0" prefHeight="31.0" prefWidth="239.0" promptText="Skriv hvor lang tid studentet har på å gjør modulen" />
+      <Label layoutX="14.0" layoutY="300.0" text="Hva er læringsmålet?" />
+      <TextField fx:id="modulMålFelt" layoutX="308.0" layoutY="295.0" prefHeight="31.0" prefWidth="239.0" promptText="Skriv hvilket læringsmål det er" />
+      <Button layoutX="437.0" layoutY="396.0" mnemonicParsing="false" onAction="#registrerModul" text="Legg til modul" />
+      <TextField fx:id="quizFelt" layoutX="308.0" layoutY="341.0" prefHeight="31.0" prefWidth="239.0" promptText="skriv quiz nummret" />
+      <Label layoutX="14.0" layoutY="346.0" text="Hvilken quiz skal den referete til?" />
+   </children>
+</AnchorPane>

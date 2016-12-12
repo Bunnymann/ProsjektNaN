@@ -6,6 +6,7 @@
 package slitapplication.GUI;
 
 import DataModel.ModulDataModel;
+import Framework.ModulManager;
 import Resources.ModulHash;
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +19,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -26,16 +29,73 @@ import javafx.stage.Stage;
  * @author eier
  */
 public class FXMLModulLærerController implements Initializable {
-
+    
+    int modulId;
+    
+    String modulDesc;
+    String  modulTid;
+    String  modulMål;
+    int  quizID;
+      
     ModulHash m;
 
     public FXMLModulLærerController() {
         this.m = new ModulHash();
+        this.modulDesc = null;
+        this.modulId = 0;
+        this.modulMål = null;
+        this.modulTid = null;
+        this.quizID = 0;
+    
     }
+
+    public int getModulId() {
+        return modulId;
+    }
+
+    public void setModulId(int modulId) {
+        this.modulId = modulId;
+    }
+
+    public String getModulDesc() {
+        return modulDesc;
+    }
+
+    public void setModulDesc(String modulDesc) {
+        this.modulDesc = modulDesc;
+    }
+
+    public String getModulTid() {
+        return modulTid;
+    }
+
+    public void setModulTid(String modulTid) {
+        this.modulTid = modulTid;
+    }
+
+    public String getModulMål() {
+        return modulMål;
+    }
+
+    public void setModulMål(String modulMål) {
+        this.modulMål = modulMål;
+    }
+
+    public int getQuizID() {
+        return quizID;
+    }
+
+    public void setQuizID(int quizID) {
+        this.quizID = quizID;
+    }
+    
+     ModulManager manager;    
+        
     
     @FXML
     public TextArea modulInfoL;
-        
+    
+    
     
     
         @FXML
@@ -269,8 +329,50 @@ public class FXMLModulLærerController implements Initializable {
         modulInfoL.appendText(modul.getModulFrist());
         
     }
-   
-    /**
+    
+    
+    
+    @FXML
+    private void leggTilModul (ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = new Stage();
+        
+        root = FXMLLoader.load(getClass().getResource("FXMLModulPopUpLærer.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+        
+    }
+    
+    @FXML
+    public TextField modulIDFelt;
+    @FXML
+    public TextArea modulDescFelt;
+    @FXML
+    public TextField modulTidfelt;
+    @FXML
+    public TextField modulMålFelt;
+    @FXML 
+    public TextField quizFelt;
+    
+    
+    
+    
+    
+    
+    @FXML 
+    private void registrerModul (ActionEvent event) throws IOException {
+        setModulDesc(modulDescFelt.getText());
+        setModulId(Integer.parseInt(modulIDFelt.getText()));
+        setModulMål(modulMålFelt.getText());
+        setModulTid(modulTidfelt.getText());
+        setQuizID(Integer.parseInt(quizFelt.getText()));
+        
+        manager.createModul(modulId, modulMål, modulDesc, modulTid,"Modul " + modulId, quizID);
+    }
+    
+  /**
      * Initializes the controller class.
      */
     @Override
@@ -279,3 +381,4 @@ public class FXMLModulLærerController implements Initializable {
     }    
     
 }
+     

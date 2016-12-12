@@ -55,9 +55,10 @@
          <children>
             <TreeTableView prefHeight="496.0" prefWidth="777.0">
                <columns>
-                  <TreeTableColumn prefWidth="203.0" text="Student" />
-                  <TreeTableColumn prefWidth="296.0" text="Modul" />
-                  <TreeTableColumn prefWidth="273.0" text="Fremgang" />
+                  <TreeTableColumn prefWidth="155.0" text="Student" />
+                  <TreeTableColumn prefWidth="161.0" text="Modul" />
+                  <TreeTableColumn prefWidth="247.0" text="Besvarelse" />
+                  <TreeTableColumn prefWidth="213.0" text="Godkjent/Ikke godkjent" />
                </columns>
             </TreeTableView>
          </children>

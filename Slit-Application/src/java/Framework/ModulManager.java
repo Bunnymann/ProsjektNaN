@@ -11,6 +11,7 @@ import Server.ModulSessionBeanRemote;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.TextField;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -64,5 +65,7 @@ public class ModulManager {
         HashMap<String, ModulDataModel> modMap = m.getModulListPojo();
         return modMap;
     }
+
+    
 
 }

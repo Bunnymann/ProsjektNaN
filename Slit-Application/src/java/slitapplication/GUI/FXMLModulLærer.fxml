@@ -50,7 +50,7 @@
                   </VBox>
                   <Pane layoutX="171.0" layoutY="75.0" prefHeight="504.0" prefWidth="777.0">
                      <children>
-                        <Pane layoutY="8.0" prefHeight="510.0" prefWidth="777.0">
+                        <Pane layoutY="14.0" prefHeight="510.0" prefWidth="777.0">
                            <children>
                               <ScrollPane layoutY="29.0" prefHeight="469.0" prefViewportHeight="389.0" prefViewportWidth="76.0" prefWidth="131.0">
                                  <content>
@@ -70,7 +70,7 @@
                                     </VBox>
                                  </content>
                               </ScrollPane>
-                              <Button layoutX="604.0" layoutY="468.0" mnemonicParsing="false" text="Legg til ny modul" wrapText="true">
+                              <Button layoutX="604.0" layoutY="468.0" mnemonicParsing="false" onAction="#leggTilModul" text="Legg til ny modul" wrapText="true">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
@@ -98,9 +98,6 @@
                <stylesheets>
                   <URL value="@fxmlstartside.css" />
                </stylesheets>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>

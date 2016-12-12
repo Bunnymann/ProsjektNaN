@@ -28,7 +28,7 @@ public class FXMLStartSideLærerController implements Initializable {
      @FXML
     private void moduler(ActionEvent event) throws IOException {
         Parent moduler_parent;
-         moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));
+        moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));
         Scene moduler_scene = new Scene(moduler_parent);
         Stage moduler_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         moduler_stage.hide();

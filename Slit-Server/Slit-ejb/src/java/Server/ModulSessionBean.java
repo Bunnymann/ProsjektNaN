@@ -57,7 +57,7 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
     @Override
     public void createModul(int id, String name, String desc, String frist, String kriterier, int quizID) {
         Modul modulEntity = new Modul();
-
+        System.out.println("Create modul called");
         modulEntity.setModulID(id);
         modulEntity.setModulNavn(name);
         modulEntity.setModulBesk(desc);
@@ -66,6 +66,7 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
         //modulEntity.setQuizID(em.find(Quiz.class, quizID));
 
         persist(modulEntity);
+        System.out.println("Modul Persisted");
     }
 
     /*
