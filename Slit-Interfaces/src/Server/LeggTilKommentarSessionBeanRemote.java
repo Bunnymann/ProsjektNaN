@@ -22,9 +22,8 @@ public interface LeggTilKommentarSessionBeanRemote {
      
      void leggTilStudentMld (int meldingId, String studentMld);
      
-     void oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld);
      
      void oppdatereTb (int meldingId, String lærerMld, String statusMld, String studentMld);
      
-     void kobleTbTilBesvar (int meldingId, int bId);
+     void kobleTbTilBesvar (int bId, TilbakemeldingDataModel tb);
 }

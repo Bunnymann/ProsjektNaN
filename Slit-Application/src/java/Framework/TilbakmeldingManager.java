@@ -49,19 +49,13 @@ public class TilbakmeldingManager {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.leggTilStudentMld(meldingId, studentMld);
     }
-
-    public void oppretteTb (Integer meldingId, String statusMld, String studentMld, String lærerMld){
-        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.oppretteTb(meldingId, lærerMld, statusMld, studentMld);
-    }
     
     public void oppdatereTb (Integer meldingId, String statusMld, String studentMld, String lærerMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.oppdatereTb(meldingId, lærerMld, statusMld, studentMld);
     }
     
-    public void kobleTbTilBesvar (Integer meldingId, Integer bId) {
-        LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.kobleTbTilBesvar(meldingId, bId);
+    public void kobleTbTilBesvar (Integer bId, TilbakemeldingDataModel tb) {
+        this.lookupLeggTilKommentarSessionBeanRemote().kobleTbTilBesvar(bId, tb);
     }
 }

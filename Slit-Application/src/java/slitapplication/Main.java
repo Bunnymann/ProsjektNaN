@@ -5,8 +5,8 @@
  */
 package slitapplication;
 
-import Framework.ModulManager;
-import java.util.HashMap;
+import DataModel.TilbakemeldingDataModel;
+import Framework.TilbakmeldingManager;
 
 
 /**
@@ -17,9 +17,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ModulManager m = new ModulManager();
-        HashMap modulMap = m.getModulList();
-        System.out.println(modulMap.entrySet());
+        
+        TilbakmeldingManager tb1 = new TilbakmeldingManager();
+        TilbakemeldingDataModel tb = new TilbakemeldingDataModel(7,"Jallamekk", "Godkjent", "ballefrans");
+        tb1.kobleTbTilBesvar(1, tb);
+        
+        
+        
     }
 
 
