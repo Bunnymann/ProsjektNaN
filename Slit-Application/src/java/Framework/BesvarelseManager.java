@@ -33,8 +33,8 @@ public class BesvarelseManager {
         this.lookupInnleveringSessionBeanRemote().createBesvarelse(m);
     }
 
-    public String testMethod() {
-        return this.lookupInnleveringSessionBeanRemote().testMethod();
+    public BesvarelseDataModel getInnleveringByID(int id) {
+        return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
     }
     
     public String getInnleverigStudentName(int pk) {

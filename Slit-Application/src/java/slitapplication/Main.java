@@ -10,6 +10,9 @@ import Framework.BesvarelseManager;
 import Framework.ModulManager;
 import java.util.Calendar;
 import java.util.Date;
+import DataModel.TilbakemeldingDataModel;
+import Framework.TilbakmeldingManager;
+
 
 /**
  *
@@ -17,17 +20,7 @@ import java.util.Date;
  */
 public class Main {
 
-    
     public static void main(String[] args) {
-        BesvarelseManager manager = new BesvarelseManager();
-        Date d1 = Calendar.getInstance().getTime();
-        BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
-        
-        //manager.createBesvarelse(test);
-        //System.out.println(manager.getInnleverigStudentName(5));
-        //System.out.println(manager.getModulFremdridt(3));
-        
-
     }
 
 
@@ -52,7 +45,6 @@ public class Main {
         primaryStage.show();
 
     }*/
-
     public Main() {
     }
 }
