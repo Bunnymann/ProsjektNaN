@@ -86,6 +86,24 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
     }
     
     @Override
+    public String getInnleverigStudentName(int pk) {
+        Bruker b = em.find(Innlevering.class, pk).getBrukerID();
+        return (b.getForNavn() + " " + b.getEtterNavn());       
+    }
+    
+    @Override
+    public String getModulFremdridt(int pk){
+        Innlevering i = em.find(Innlevering.class, pk);
+        String navn = i.getBrukerID().getForNavn();
+        Integer besv = i.getBesvarelseID();
+        Integer modul = i.getModulID().getModulID();
+        String tm = i.getMeldingID().getStatusMld();
+        
+        
+        return (navn + " " + besv + " " + modul + " " +  tm);
+    } 
+            
+    @Override
     public void createBesvarelse(BesvarelseDataModel m) {
         persist(this.convertToBesvarelseEntity(m));
     }

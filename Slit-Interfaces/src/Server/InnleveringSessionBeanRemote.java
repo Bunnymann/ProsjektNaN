@@ -32,4 +32,8 @@ public interface InnleveringSessionBeanRemote {
     List<BesvarelseDataModel> getBesvarelse();
     
     BesvarelseDataModel getBesvarelse(int id);
+    
+    String getInnleverigStudentName(int pk);
+    
+    String getModulFremdridt(int pk);
 }

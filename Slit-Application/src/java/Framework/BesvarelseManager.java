@@ -36,5 +36,12 @@ public class BesvarelseManager {
     public String testMethod() {
         return this.lookupInnleveringSessionBeanRemote().testMethod();
     }
-
+    
+    public String getInnleverigStudentName(int pk) {
+        return this.lookupInnleveringSessionBeanRemote().getInnleverigStudentName(pk);
+    }
+    
+    public String getModulFremdridt(int pk) {
+        return this.lookupInnleveringSessionBeanRemote().getModulFremdridt(pk);
+    }
 }

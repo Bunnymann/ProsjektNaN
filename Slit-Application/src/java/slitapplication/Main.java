@@ -7,6 +7,7 @@ package slitapplication;
 
 import DataModel.BesvarelseDataModel;
 import Framework.BesvarelseManager;
+import Framework.ModulManager;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -22,7 +23,10 @@ public class Main {
         Date d1 = Calendar.getInstance().getTime();
         BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
         
-        manager.testMethod();
+        //manager.createBesvarelse(test);
+        //System.out.println(manager.getInnleverigStudentName(5));
+        //System.out.println(manager.getModulFremdridt(3));
+        
 
     }
 
