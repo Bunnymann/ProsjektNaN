@@ -6,6 +6,7 @@
 package Server;
 
 import DataModel.ModulDataModel;
+import DataModel.ModulListPojo;
 import javax.ejb.Remote;
 
 /**
@@ -21,5 +22,5 @@ public interface ModulSessionBeanRemote {
 
     void persist(Object object);
 
-    String testMethod();
+    ModulListPojo getModulResultList();
 }

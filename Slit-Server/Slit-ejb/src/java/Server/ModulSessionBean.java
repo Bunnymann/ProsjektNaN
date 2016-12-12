@@ -6,7 +6,10 @@
 package Server;
 
 import DataModel.ModulDataModel;
+import DataModel.ModulListPojo;
 import Database.Modul;
+import java.util.HashMap;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -78,8 +81,16 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
     }
      */
     @Override
-    public String testMethod() {
-        return "This is a test";
+    public ModulListPojo getModulResultList() {
+        List<Modul> modulList = em.createNamedQuery("Modul.findAll", Modul.class).getResultList();
+        HashMap<String, ModulDataModel> modulePojoMap = new HashMap();
+        for (Modul m : modulList) {
+            ModulDataModel mD = convertModul(m);
+            modulePojoMap.put(mD.getModulname(), mD);
+        }
+        ModulListPojo mapPojo = new ModulListPojo(modulePojoMap);
+        return mapPojo;
+
     }
 
     @Override

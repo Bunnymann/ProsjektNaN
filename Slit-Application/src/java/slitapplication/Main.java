@@ -5,10 +5,9 @@
  */
 package slitapplication;
 
-import DataModel.BesvarelseDataModel;
-import Framework.BesvarelseManager;
-import java.util.Calendar;
-import java.util.Date;
+import Framework.ModulManager;
+import java.util.HashMap;
+
 
 /**
  *
@@ -16,14 +15,19 @@ import java.util.Date;
  */
 public class Main {
 
-    
     public static void main(String[] args) {
+<<<<<<< HEAD
         BesvarelseManager manager = new BesvarelseManager();
         Date d1 = Calendar.getInstance().getTime();
         BesvarelseDataModel test = new BesvarelseDataModel(5, d1, 5, 2, 5);
         
         manager.testMethod();
+=======
+>>>>>>> 80d8869ed9b9e522287a2378305bb94f48ef7ddf
 
+        ModulManager m = new ModulManager();
+        HashMap modulMap = m.getModulList();
+        System.out.println(modulMap.entrySet());
     }
 
 
@@ -48,7 +52,6 @@ public class Main {
         primaryStage.show();
 
     }*/
-
     public Main() {
     }
 }
