@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="446.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitapplication.GUI.FXMLModulLærerController">
+   <children>
+      <Pane prefHeight="446.0" prefWidth="735.0">
+         <children>
+            <Label layoutX="205.0" layoutY="117.0" text="Velg hvilken modul du skal sette deg i kø for" />
+            <Label layoutX="153.0" layoutY="25.0" text="Velg hvilken modul du levere?" underline="true" wrapText="true">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button layoutX="300.0" layoutY="382.0" mnemonicParsing="false" text="Sett deg i Kø" />
+            <MenuButton layoutX="293.0" layoutY="138.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="135.0" text="Moduler" wrapText="true">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Modul1" />
+                  <MenuItem mnemonicParsing="false" text="Modul2" />
+                  <MenuItem mnemonicParsing="false" text="Modul3" />
+                  <MenuItem mnemonicParsing="false" text="Modul4" />
+                  <MenuItem mnemonicParsing="false" text="Modul5" />
+                  <MenuItem mnemonicParsing="false" text="Modul6" />
+                  <MenuItem mnemonicParsing="false" text="Modul7" />
+                  <MenuItem mnemonicParsing="false" text="Modul8" />
+                  <MenuItem mnemonicParsing="false" text="Modul9" />
+                  <MenuItem mnemonicParsing="false" text="Modul10" />
+               </items>
+            </MenuButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

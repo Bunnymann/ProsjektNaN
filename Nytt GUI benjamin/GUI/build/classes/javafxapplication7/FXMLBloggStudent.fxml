@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="950.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication7.FXMLBloggStudentController">
+   <children>
+      <VBox layoutX="1.0" layoutY="87.0" prefHeight="266.0" prefWidth="162.0">
+         <children>
+            <Button lineSpacing="2.0" mnemonicParsing="false" onAction="#brukereS" prefHeight="50.0" prefWidth="159.0" text="Brukere">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#bloggS" opacity="0.5" prefHeight="50.0" prefWidth="159.0" text="Blogg">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#modulerS" prefHeight="50.0" prefWidth="159.0" text="Moduler">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#fremgangS" prefHeight="50.0" prefWidth="159.0" text="Fremgang">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="171.0" layoutY="75.0" prefHeight="504.0" prefWidth="777.0">
+         <children>
+            <ScrollPane layoutX="6.0" layoutY="12.0" prefHeight="486.0" prefViewportHeight="501.0" prefViewportWidth="137.0" prefWidth="139.0">
+               <content>
+                  <VBox layoutX="6.0" layoutY="28.0" prefHeight="461.0" prefWidth="137.0" spacing="20.0">
+                     <children>
+                        <Button layoutY="29.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Uke 35" />
+                        <Button layoutY="69.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Uke 36" />
+                        <Button layoutY="113.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Uke 37" />
+                        <Button layoutY="153.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Uke 38" />
+                        <Button layoutY="191.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Uke 39" />
+                        <Button layoutY="230.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Uke 40" />
+                        <Button layoutY="268.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Uke 41" />
+                        <Button layoutY="305.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Uke 42" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Uke 43" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="Uke 44" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Button layoutX="326.0" layoutY="227.0" mnemonicParsing="false" text="Skriv nytt blogg-innlegg">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ToolBar layoutX="1.0" prefHeight="62.0" prefWidth="950.0">
+         <items>
+            <Label alignment="TOP_CENTER" prefHeight="21.0" prefWidth="931.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+         </items>
+      </ToolBar>
+      <Button layoutX="3.0" layoutY="518.0" mnemonicParsing="false" onAction="#startsidestudent" prefHeight="50.0" prefWidth="159.0" text="Startside">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@fxmlstartside.css" />
+   </stylesheets>
+</AnchorPane>
