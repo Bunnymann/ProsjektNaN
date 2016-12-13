@@ -28,32 +28,32 @@ public class TilbakmeldingManager {
             throw new RuntimeException(ne);
         }
     }
-  
+
     public TilbakemeldingDataModel getTilbakemeldingById(int id) {
-        return this.lookupLeggTilKommentarSessionBeanRemote().getTilbakemeldingById(id);
+        return this.lookupLeggTilKommentarSessionBeanRemote().getTilbakemelding(id);
     }
-           
+
     public void leggTilLærerMld(int meldingId, String lærerMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.leggTilLærerMld (meldingId, lærerMld);
+        bean.addLærerMld(meldingId, lærerMld);
     }
-    
-    public void leggTilStatusMld (int meldingId, String statusMld) {
+
+    public void leggTilStatusMld(int meldingId, String statusMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.leggTilStatusMld (meldingId, statusMld);
+        bean.addStatusMld(meldingId, statusMld);
     }
-    
-    public void leggTilStudentMld (int meldingId, String studentMld){
+
+    public void leggTilStudentMld(int meldingId, String studentMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.leggTilStudentMld(meldingId, studentMld);
+        bean.addStudentMld(meldingId, studentMld);
     }
-    
-    public void oppdatereTb (Integer meldingId, String statusMld, String studentMld, String lærerMld) {
+
+    public void oppdatereTb(Integer meldingId, String statusMld, String studentMld, String lærerMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
-        bean.oppdatereTb(meldingId, lærerMld, statusMld, studentMld);
+        bean.updateTilbakemelding(meldingId, lærerMld, statusMld, studentMld);
     }
-    
-    public void kobleTbTilBesvar (Integer bId, TilbakemeldingDataModel tb) {
-        this.lookupLeggTilKommentarSessionBeanRemote().kobleTbTilBesvar(bId, tb);
+
+    public void kobleTbTilBesvar(Integer bId, int tb) {
+        this.lookupLeggTilKommentarSessionBeanRemote().connectToInnlevering(bId, tb);
     }
 }

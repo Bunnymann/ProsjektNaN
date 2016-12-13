@@ -34,14 +34,13 @@ public class BesvarelseManager {
     }
 
     public BesvarelseDataModel getInnleveringByID(int id) {
-        return this.lookupInnleveringSessionBeanRemote().getBesvarelseById(id);
+        return this.lookupInnleveringSessionBeanRemote().getBesvarelse(id);
     }
 
-    
     public String getInnleverigStudentName(int pk) {
         return this.lookupInnleveringSessionBeanRemote().getInnleverigStudentName(pk);
     }
-    
+
     public String getModulFremdridt(int pk) {
         return this.lookupInnleveringSessionBeanRemote().getModulFremdridt(pk);
     }

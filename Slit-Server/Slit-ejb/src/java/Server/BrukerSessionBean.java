@@ -7,6 +7,8 @@ package Server;
 
 import DataModel.BrukerDataModel;
 import Database.Bruker;
+import Database.Lærer;
+import Database.Student;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,20 +23,19 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     @PersistenceContext(unitName = "Slit-ejbPU")
     private EntityManager em;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
     public Bruker getBrukerByID(int id) {
         Bruker bruker = em.find(Bruker.class, id);
         return bruker;
     }
 
-    public BrukerDataModel convertToBrukerPojo(Bruker b) {
+    public BrukerDataModel convertToPojo(Bruker b) {
         BrukerDataModel bDm = new BrukerDataModel();
         bDm.setBrukerID(b.getBrukerID());
         bDm.setForNavn(b.getForNavn());
         bDm.setEtterNavn(b.getEtterNavn());
         bDm.setEmail(b.getEmail());
         bDm.setTlfNr(b.getTlfNr());
+        // sjekker om entitetobjektet er lærer eller student
         if (b.getStudent() != null) {
             bDm.setStudentID(b.getStudent().getStudentNr());
 
@@ -45,9 +46,30 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         return bDm;
     }
 
+    public Bruker convertToEntity(BrukerDataModel b) {
+        Bruker bruker = new Bruker();
+        bruker.setBrukerID(b.getBrukerID());
+        bruker.setForNavn(b.getForNavn());
+        bruker.setEmail(b.getEmail());
+        bruker.setPassord(b.getPassord());
+        // Sjekker om BrukerdDataModel objektet inneholder en student id eller en lærer id
+        if (b.getStudentID() != null) {
+            bruker.setStudent(em.find(Student.class, b.getStudentID()));
+        }
+        if (b.getStudentID() == null && b.getLærerID() != null) {
+            bruker.setLærer(em.find(Lærer.class, b.getLærerID()));
+        }
+        return bruker;
+    }
+
+    @Override
+    public void createBruker(BrukerDataModel b) {
+        persist(convertToEntity(b));
+    }
+
     @Override
     public BrukerDataModel getBruker(int id) {
-        return convertToBrukerPojo(getBrukerByID(id));
+        return convertToPojo(getBrukerByID(id));
 
     }
 

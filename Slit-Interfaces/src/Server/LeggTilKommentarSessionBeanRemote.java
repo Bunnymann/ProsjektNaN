@@ -14,15 +14,18 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface LeggTilKommentarSessionBeanRemote {
-    TilbakemeldingDataModel getTilbakemeldingById (int id);
-    
-     void leggTilLærerMld(int meldingId, String lærerMld);
-     
-     void leggTilStatusMld (int meldingId, String statusMld);
-     
-     void leggTilStudentMld (int meldingId, String studentMld);
-    
-     void oppdatereTb (int meldingId, String lærerMld, String statusMld, String studentMld);
-     
-     void kobleTbTilBesvar (int bId, TilbakemeldingDataModel tb);
+
+    TilbakemeldingDataModel getTilbakemelding(int id);
+
+    void addLærerMld(int meldingId, String lærerMld);
+
+    void addStatusMld(int meldingId, String statusMld);
+
+    void addStudentMld(int meldingId, String studentMld);
+
+    void createTilbakemelding(int meldingId, String lærerMld, String statusMld, String studentMld);
+
+    void updateTilbakemelding(int meldingId, String lærerMld, String statusMld, String studentMld);
+
+    void connectToInnlevering(int meldingId, int bId);
 }

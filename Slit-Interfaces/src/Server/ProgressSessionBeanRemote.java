@@ -5,8 +5,6 @@
  */
 package Server;
 
-import DataModel.KøDatamodel;
-import DataModel.KøList;
 import javax.ejb.Remote;
 
 /**
@@ -14,11 +12,8 @@ import javax.ejb.Remote;
  * @author Sindre
  */
 @Remote
-public interface QueueSessionBeanRemote {
+public interface ProgressSessionBeanRemote {
 
-    KøList getQueuePojo();
+    void test1();
 
-    void updateKø(KøDatamodel kD);
-
-    KøDatamodel getFromQueue(KøList kø, int id);
 }

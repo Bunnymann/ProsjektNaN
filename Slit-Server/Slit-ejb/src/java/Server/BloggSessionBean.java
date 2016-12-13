@@ -26,6 +26,7 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
         return em.find(Blogg.class, id);
     }
 
+    //brukes for å konvertere et entitetsobjekt til et pojo objekt
     public BloggDataModel convertToPojo(Blogg b) {
         BloggDataModel blogg = new BloggDataModel();
         blogg.setBloggID(b.getBloggID());
@@ -34,6 +35,7 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
         return blogg;
     }
 
+    //brukes for å konvertere et DataModel objekt til et entitetsobjekt
     public Blogg convertToEntity(BloggDataModel bm) {
         Blogg blogg = new Blogg();
         blogg.setBloggID(bm.getBloggID());
@@ -43,43 +45,18 @@ public class BloggSessionBean implements BloggSessionBeanRemote {
     }
 
     @Override
-    public void createrBlogg(BloggDataModel bm) {
+    //Opprettet DataModel konverteres og lagres i databasen
+    public void createBlogg(BloggDataModel bm) {
         persist(convertToEntity(bm));
+    }
+
+    @Override
+    //klargjør entitet fra DB for klienten
+    public BloggDataModel getBloggPojo(int id) {
+        return convertToPojo(em.find(Blogg.class, id));
     }
 
     public void persist(Object object) {
         em.persist(object);
     }
-    /*
-    public void addManyToOne(Blogg b, int id) {
-        Student student = em.find(Student.class, id);
-        student.getBloggList().add(b);
-        persist(student);
-    }
-
-    public List setManyToOne(Blogg blogg, int studentID) {
-        Student student = em.find(Student.class, studentID);
-        List<Blogg> bloggList = student.getBloggList();
-        for (Blogg b : bloggList) {
-            System.out.println(b.toString());
-        }
-        bloggList.add(blogg);
-        for (Blogg b : bloggList) {
-            System.out.println(b.toString());
-        }
-        return bloggList;
-    }
-     */
- /*
-    public BloggListDataModel addToPojoList(int id) {
-        Student student = em.find(Student.class, id);
-        List<Blogg> sB = student.getBloggList();
-        BloggListDataModel list = new BloggListDataModel();
-        for (Blogg b : sB) {
-            list.getBloggList().add(this.convertToPojo(b));
-        }
-
-        return list;
-
-    }*/
 }

@@ -19,12 +19,6 @@ import javax.naming.NamingException;
  */
 public class BloggManager {
 
-    public void creatBlogg(int bloggID, String bloggLink, String studentNr) {
-        BloggDataModel bm = new BloggDataModel();
-        bm.fixObject(bloggID, bloggLink, studentNr);
-        this.lookupBloggSessionBeanRemote().createrBlogg(bm);
-    }
-
     private BloggSessionBeanRemote lookupBloggSessionBeanRemote() {
         try {
             Context c = new InitialContext();
@@ -33,6 +27,11 @@ public class BloggManager {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
+    }
+
+    public void createBlogg(int bloggID, String bloggLink, String studentNr) {
+        BloggDataModel bm = new BloggDataModel(bloggID, bloggLink, studentNr);
+        this.lookupBloggSessionBeanRemote().createBlogg(bm);
     }
 
 }

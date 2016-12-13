@@ -34,12 +34,12 @@ public class ModulManager {
     
     public ModulDataModel getModul(int id) {
         System.out.println("manager.getModul Called");
-        return this.lookupModulSessionBeanRemote().getModulById(id);
+        return this.lookupModulSessionBeanRemote().getModul(id);
     }
 
     public String getModulName(int id) {
         System.out.println("get Name called");
-        return this.lookupModulSessionBeanRemote().getModulById(id).getModulname();
+        return this.lookupModulSessionBeanRemote().getModul(id).getModulname();
 
     }
 

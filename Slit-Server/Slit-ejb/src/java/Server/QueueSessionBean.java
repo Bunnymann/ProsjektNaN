@@ -9,7 +9,6 @@ import DataModel.KøDatamodel;
 import DataModel.KøList;
 import Database.Kø;
 import Database.KøPK;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -35,23 +34,46 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
 
     }
 
+    public Kø convertToKøEntity(KøDatamodel køModel) {
+        KøPK køEntityPK = new KøPK();
+
+        køEntityPK.setInnlevID(køModel.getInnlevID());
+        køEntityPK.setDato(køModel.getDato());
+
+        Kø køEntity = new Kø(køEntityPK);
+        return køEntity;
+
+    }
+
     public List getQueue() {
-        List queueList = em.createNamedQuery("Kø.findAll", Kø.class).getResultList();
-        return queueList;
+        return em.createNamedQuery("Kø.findAll", Kø.class).getResultList();
     }
 
     @Override
     public KøList getQueuePojo() {
         KøList kLpojo = new KøList();
-        ArrayList<KøDatamodel> kD = new ArrayList();
         List<Kø> køEntityList = getQueue();
-        System.out.println(køEntityList.iterator().next().toString());
         for (Kø k : køEntityList) {
-            System.out.print(k);
-            kD.add(this.convertToKøDM(k));
+            kLpojo.getKøList().add(this.convertToKøDM(k));
         }
-        kLpojo.setKøList(kD);
         return kLpojo;
+    }
+
+    @Override
+    public void updateKø(KøDatamodel kD) {
+        em.remove(this.convertToKøEntity(kD));
+    }
+
+    @Override
+    public KøDatamodel getFromQueue(KøList kø, int id) {
+        KøDatamodel result = new KøDatamodel();
+        if (kø.containsInnlevID(kø.getKøList(), id)) {
+            result = this.convertToKøDM(em.find(Kø.class, id));
+        } else {
+            System.out.println("Not found");
+        }
+        return result;
+
     }
 
     public void persist(Object object) {
