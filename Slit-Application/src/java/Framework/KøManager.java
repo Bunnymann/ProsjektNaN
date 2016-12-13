@@ -47,6 +47,9 @@ public class KøManager {
 
     public KøList getQueue() {
         return this.lookupQueueSessionBeanRemote().getQueuePojo();
+
+
     }
 
-}
+
+}  

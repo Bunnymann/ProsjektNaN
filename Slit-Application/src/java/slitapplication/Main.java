@@ -12,7 +12,6 @@ import javafx.application.Application;
 import slitapplication.GUI.GUI;
 
 
-
 /**
  *
  * @author Sindre
