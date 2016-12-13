@@ -26,5 +26,6 @@
       <Button layoutX="437.0" layoutY="396.0" mnemonicParsing="false" onAction="#registrerModul" text="Legg til modul" />
       <TextField fx:id="quizFelt" layoutX="308.0" layoutY="341.0" prefHeight="31.0" prefWidth="239.0" promptText="skriv quiz nummret" />
       <Label layoutX="14.0" layoutY="346.0" text="Hvilken quiz skal den referete til?" />
+      <TextField fx:id="bekreftelseFelt" editable="false" layoutX="24.0" layoutY="403.0" opacity="0.5" prefHeight="31.0" prefWidth="274.0" />
    </children>
 </AnchorPane>

@@ -28,6 +28,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label label;
     
+    //Setter hver sin knapp til student eller lærer startsiden i programmet.
     @FXML
     private void Logginn(ActionEvent event) throws IOException {
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXMLStartSideStudent.fxml"));

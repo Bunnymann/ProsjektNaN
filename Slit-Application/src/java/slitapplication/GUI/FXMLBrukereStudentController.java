@@ -20,11 +20,11 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author eier
+ * @author Benjamin
  */
 public class FXMLBrukereStudentController implements Initializable {
 
-    
+    //Setter hver knapp til hvert sitt scene.
    
     @FXML
     private void modulerS(ActionEvent event) throws IOException {

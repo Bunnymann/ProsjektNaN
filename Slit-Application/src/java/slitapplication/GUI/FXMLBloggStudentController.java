@@ -20,11 +20,11 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author eier
+ * @author Benjamin
  */
 public class FXMLBloggStudentController implements Initializable {
 
-    
+    // Setter alle knappene til hvert sin scene. 
        @FXML
     private void modulerS(ActionEvent event) throws IOException {
         Parent modulerS_parent = FXMLLoader.load(getClass().getResource("FXMLModulStudent.fxml"));

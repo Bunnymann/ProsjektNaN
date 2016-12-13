@@ -20,12 +20,12 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author eier
+ * @author Benjamin
  */
 public class FXMLFremgangLærerController implements Initializable {
 
     
-    
+    //Setter hver knapp for hvert sitt scene .
          @FXML
     private void moduler(ActionEvent event) throws IOException {
         Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));

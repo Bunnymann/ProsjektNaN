@@ -375,7 +375,10 @@ public class FXMLModulLærerController implements Initializable {
     public TextField modulMålFelt;
     @FXML 
     public TextField quizFelt;
-   
+    @FXML 
+    public TextField bekreftelseFelt;
+    
+    
     //Henter ut det læreren har skrevet om en ny modul, og skrivet dette inn til datanbasen. 
     @FXML 
     private void registrerModul (ActionEvent event) throws IOException {
@@ -385,7 +388,9 @@ public class FXMLModulLærerController implements Initializable {
         setModulTid(modulTidfelt.getText());
         setQuizID(Integer.parseInt(quizFelt.getText()));
         
-        manager.createModul(modulId, modulMål, modulDesc, modulTid,"Modul " + modulId, quizID);
+        manager.createModul(modulId, modulMål, modulDesc, modulTid,("Modul " + modulId), quizID);
+        bekreftelseFelt.setText("Den nye modulen er lagt til");
+        
     }
     
     

@@ -21,11 +21,11 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author eier
+ * @author Benjamin
  */
 public class FXMLStartSideStudentController implements Initializable {
 
-    
+    //Setter hver knapp til hver sin scene.
     @FXML
     private void modulerS(ActionEvent event) throws IOException {
         Parent modulerS_parent = FXMLLoader.load(getClass().getResource("FXMLModulStudent.fxml"));
