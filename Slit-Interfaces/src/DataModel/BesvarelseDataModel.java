@@ -17,13 +17,13 @@ public class BesvarelseDataModel implements java.io.Serializable {
 
     private Date dato;
 
-    //private Student brukerID
+    //private Student brukerID (fremmednøkkel)
     private Integer brukerID;
 
-    //private Modul modulID
+    //private Modul modulID (fremmednøkkel)
     private Integer idmodul;
 
-    //private Tilbakemelding meldingID
+    //private Tilbakemelding meldingID (fremmednøkkel)
     private Integer meldingID;
 
     public BesvarelseDataModel() {
