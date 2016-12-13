@@ -5,26 +5,33 @@
  */
 package slitapplication;
 
+
+
 import Framework.ModulManager;
-import java.util.HashMap;
+import javafx.application.Application;
+import slitapplication.GUI.GUI;
+
+
 
 /**
  *
  * @author Sindre
  */
+
+
+
 public class Main {
+    
 
     public static void main(String[] args) {
-        ModulManager m = new ModulManager();
-        HashMap modulMap = m.getModulList();
-        System.out.println(modulMap.entrySet());
-
-    }
-
+      Application.launch(GUI.class, args);
+    } 
 
     /*public Stage getPrimaryStage() {
         return primaryStage;
     }
+    
+    
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -43,6 +50,6 @@ public class Main {
         primaryStage.show();
 
     }*/
-    public Main() {
-    }
+
 }
+

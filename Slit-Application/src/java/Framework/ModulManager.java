@@ -11,6 +11,7 @@ import Server.ModulSessionBeanRemote;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.TextField;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -30,6 +31,7 @@ public class ModulManager {
             throw new RuntimeException(ne);
         }
     }*/
+    
     public ModulDataModel getModul(int id) {
         System.out.println("manager.getModul Called");
         return this.lookupModulSessionBeanRemote().getModulById(id);
@@ -57,10 +59,14 @@ public class ModulManager {
         }
     }
 
+
     //return list containing all the modules from db
     public HashMap getModulList() {
         ModulListPojo m = this.lookupModulSessionBeanRemote().getModulResultList();
         HashMap<String, ModulDataModel> modMap = m.getModulListPojo();
         return modMap;
     }
+
+    
+
 }

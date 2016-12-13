@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="583.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitapplication.GUI.FXMLBrukereLærerController">
+   <children>
+      <VBox layoutX="10.0" layoutY="88.0" prefHeight="504.0" prefWidth="159.0">
+         <children>
+            <Button lineSpacing="2.0" mnemonicParsing="false" onAction="#brukere" opacity="0.5" prefHeight="50.0" prefWidth="159.0" text="Brukere">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#moduler" prefHeight="50.0" prefWidth="159.0" text="Moduler">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#fremgang" prefHeight="50.0" prefWidth="159.0" text="Fremgang">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#startside" prefHeight="41.0" prefWidth="158.0" text="Startside">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="260.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="182.0" layoutY="88.0" prefHeight="504.0" prefWidth="777.0">
+         <children>
+            <Pane layoutX="178.0" layoutY="2.0" prefHeight="248.0" prefWidth="598.0">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="4.0" layoutY="1.0" prefHeight="21.0" prefWidth="171.0" text="Bruker 1" />
+                  <ImageView fitHeight="126.0" fitWidth="171.0" layoutX="4.0" layoutY="22.0">
+                     <image>
+                        <Image url="@../../../../../Pictures/Testnetbeans/index.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextArea editable="false" layoutX="175.0" layoutY="22.0" prefHeight="126.0" prefWidth="159.0" text="Anders Normann&#10;01.01.1990&#10;anders@normann.no&#10;" />
+                  <Pane layoutX="334.0" prefHeight="248.0" prefWidth="262.0">
+                     <children>
+                        <TextArea editable="false" layoutY="22.0" prefHeight="226.0" prefWidth="262.0" text="Her kommer det siste blog&#10;inlegget for studenten " />
+                        <Label alignment="TOP_CENTER" layoutX="1.0" layoutY="4.0" prefHeight="21.0" prefWidth="262.0" text="Blogg" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="178.0" layoutY="247.0" prefHeight="254.0" prefWidth="598.0">
+               <children>
+                  <ScrollPane prefViewportHeight="254.0" prefViewportWidth="592.0">
+                     <content>
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="254.0" prefWidth="592.0">
+                                 <children>
+                                    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.5" prefHeight="74.0" prefWidth="104.0" text="Modul 1" />
+                                    <Button layoutX="150.0" layoutY="14.0" mnemonicParsing="false" opacity="0.5" prefHeight="74.0" prefWidth="104.0" text="Modul 2" />
+                                    <Button layoutX="279.0" layoutY="14.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="104.0" text="Modul 3" />
+                                    <Button layoutX="409.0" layoutY="14.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="104.0" text="Modul 4" />
+                                    <Button layoutX="14.0" layoutY="111.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="104.0" text="Modul 5" />
+                                    <Button layoutX="150.0" layoutY="111.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="104.0" text="Modul 6" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </content>
+                  </ScrollPane>
+               </children></Pane>
+            <ScrollPane layoutX="4.0" layoutY="2.0" prefViewportHeight="497.0" prefViewportWidth="172.0">
+               <content>
+                  <VBox layoutX="4.0" layoutY="2.0" prefHeight="527.0" prefWidth="172.0">
+                     <children>
+                        <VBox prefHeight="147.0" prefWidth="171.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="170.0" text="Bruker 1" />
+                              <ImageView fitHeight="126.0" fitWidth="171.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Pictures/Testnetbeans/index.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="125.0" prefWidth="171.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="170.0" text="Bruker 2" />
+                              <ImageView fitHeight="124.0" fitWidth="170.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Pictures/Testnetbeans/index2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="136.0" prefWidth="172.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="171.0" text="Bruker 3" />
+                              <ImageView fitHeight="112.0" fitWidth="172.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Pictures/Testnetbeans/index3.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="192.0" prefWidth="172.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="173.0" text="Bruker 4" />
+                              <ImageView fitHeight="98.0" fitWidth="156.0">
+                                 <image>
+                                    <Image url="@../../../../../Pictures/Testnetbeans/it5.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <ToolBar prefHeight="60.0" prefWidth="959.0" />
+      <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="1.0" prefHeight="60.0" prefWidth="959.0" text="SLIT" textAlignment="CENTER" textFill="#0c0832" underline="true" wrapText="true">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -35,6 +35,7 @@ public class KøManager {
         return this.lookupQueueSessionBeanRemote().getQueuePojo().getKøList();
     }
 
+
     public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
         BesvarelseDataModel bDm = null;
         if (kL.containsInnlevID(kL.getKøList(), innID)) {
@@ -47,4 +48,5 @@ public class KøManager {
     public KøList getQueue() {
         return this.lookupQueueSessionBeanRemote().getQueuePojo();
     }
+
 }
