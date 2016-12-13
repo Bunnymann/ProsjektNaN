@@ -41,6 +41,9 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         return convertBesvarelse(besvarelse);
     }
 
+    /*
+    Henter alle besvarelser fra databasen
+    */
     @Override
     public List<BesvarelseDataModel> getBesvarelse() {
         List<BesvarelseDataModel> dataBesvarelse = new ArrayList<BesvarelseDataModel>();
@@ -58,7 +61,12 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         }
         return dataBesvarelse;
     }
-
+    
+    /*
+    Henter en besvarelse fra parameter int id
+    @param id - ønsket besvarelse
+    @return - returner besvarelsen
+    */
     @Override
     public BesvarelseDataModel getBesvarelse(int id) {
         Innlevering besvarelse = em.find(Innlevering.class, id);
@@ -66,7 +74,11 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         return this.convertBesvarelse(besvarelse);
     }
 
-    
+    /*
+    Konverterer en besvarelse fra databasen til et objekt
+    @param besvarelse - ønsket besvarelse
+    @return - returnerer en besvarelsedatamodel  
+    */
     public BesvarelseDataModel convertBesvarelse(Innlevering besvarelse) {
         BesvarelseDataModel besvarelseData = new BesvarelseDataModel();
         besvarelseData.setBesvarelseID(besvarelse.getBesvarelseID());
@@ -74,7 +86,12 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
 
         return besvarelseData;
     }
-
+    
+    /*
+    Konvereter en besvarelse til databasen
+    @param m - en besvarelsedatamodel
+    @return - returnerer opprettet besvarelse 
+    */
     public Innlevering convertToBesvarelseEntity(BesvarelseDataModel m) {
         Innlevering newBesvarelse = new Innlevering();
         newBesvarelse.setBesvarelseID(m.getBesvarelseID());
@@ -87,12 +104,22 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         return newBesvarelse;
     }
 
+    /*
+    Finner navnet til studenten som har levert en besvarelse
+    @param pk - primærnøkkelen i besvarelsen
+    @return - returnerer studentens navn
+    */
     @Override
     public String getInnleverigStudentName(int pk) {
         Bruker b = em.find(Innlevering.class, pk).getBrukerID();
         return (b.getForNavn() + " " + b.getEtterNavn());       
     }
     
+    /*
+    Finner fornavnet, hvilken besvarelse og modul og status på besvarelen
+    @param pk - primørnøkkelen i besvarelsen
+    @return - returnerer forNavn, besvarelseID, modulID og statusMelding
+    */
     @Override
     public String getModulFremdridt(int pk){
         Innlevering i = em.find(Innlevering.class, pk);
@@ -101,10 +128,13 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         Integer modul = i.getModulID().getModulID();
         String tm = i.getMeldingID().getStatusMld();
         
-        
         return (navn + " " + besv + " " + modul + " " +  tm);
     } 
             
+    /*
+    Oppretter en besvarelse
+    @param m - besvarelsedatamodel
+    */
     @Override
     public void createBesvarelse(BesvarelseDataModel m) {
         Innlevering innlev = convertToBesvarelseEntity(m);
@@ -112,6 +142,10 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         persist(innlev);
     }
 
+    /*
+    Test metode
+    @returner String
+    */
     @Override
     public String testMethod() {
         return "This is a test";
@@ -122,6 +156,10 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         em.persist(object);
     }
 
+    /*
+    Legger innlevering i kø
+    @param inn - innleveringsobjekt
+    */
     public void addInnleveringToQueue(Innlevering inn) {
         KøPK kPk = new KøPK();
         kPk.setInnlevID(inn.getBesvarelseID());
