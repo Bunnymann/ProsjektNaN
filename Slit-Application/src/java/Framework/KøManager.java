@@ -6,6 +6,7 @@
 package Framework;
 
 import DataModel.BesvarelseDataModel;
+import DataModel.KøDatamodel;
 import DataModel.KøList;
 import Server.QueueSessionBeanRemote;
 import java.util.ArrayList;
@@ -35,7 +36,6 @@ public class KøManager {
         return this.lookupQueueSessionBeanRemote().getQueuePojo().getKøList();
     }
 
-
     public BesvarelseDataModel getInnleveringFromList(KøList kL, Integer innID) {
         BesvarelseDataModel bDm = null;
         if (kL.containsInnlevID(kL.getKøList(), innID)) {
@@ -48,6 +48,13 @@ public class KøManager {
     public KøList getQueue() {
         return this.lookupQueueSessionBeanRemote().getQueuePojo();
 
-    }  
+    }
 
+    public KøDatamodel getFromQueue(KøList kø, int id) {
+        return this.lookupQueueSessionBeanRemote().getFromQueue(kø, id);
+    }
+
+    public void updateQueue(KøDatamodel køModel) {
+        this.lookupQueueSessionBeanRemote().updateKø(køModel);
+    }
 }

@@ -18,6 +18,13 @@ public class BloggDataModel implements java.io.Serializable {
     private String studentID;
 
     public BloggDataModel() {
+
+    }
+
+    public BloggDataModel(int id, String bloggLink, String studentNr) {
+        this.bloggID = id;
+        this.bloggLink = bloggLink;
+        this.studentID = studentNr;
     }
 
     public Integer getBloggID() {
@@ -42,12 +49,6 @@ public class BloggDataModel implements java.io.Serializable {
 
     public void setStudentID(String studentID) {
         this.studentID = studentID;
-    }
-
-    public void fixObject(int id, String link, String student) {
-        this.setBloggID(id);
-        this.setBloggLink(bloggLink);
-        this.setStudentID(student);
     }
 
 }

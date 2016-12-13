@@ -5,17 +5,12 @@
  */
 package Server;
 
-
 import DataModel.TilbakemeldingDataModel;
 import Database.Innlevering;
 import Database.Tilbakemelding;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-
 
 /**
  *
@@ -26,99 +21,97 @@ public class LeggTilKommentarSessionBean implements LeggTilKommentarSessionBeanR
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-
-@PersistenceContext(unitName = "Slit-ejbPU")
-private EntityManager em; 
+    @PersistenceContext(unitName = "Slit-ejbPU")
+    private EntityManager em;
 
     @Override
-    public TilbakemeldingDataModel getTilbakemeldingById (int id){
-        Tilbakemelding tilbakemelding = em.find(Tilbakemelding.class, id);
-        return convertTilbakemelding (tilbakemelding);
-    
-}
+    public TilbakemeldingDataModel getTilbakemelding(int id) {
+        return convertToPojo(em.find(Tilbakemelding.class, id));
 
-    public TilbakemeldingDataModel convertTilbakemelding (Tilbakemelding tilbakemelding) {
-        TilbakemeldingDataModel tilbakemeldingData = new TilbakemeldingDataModel() ;
-        tilbakemeldingData.setMeldingID (tilbakemelding.getMeldingID());
-        tilbakemeldingData.setStatusMld (tilbakemelding.getStatusMld());
-        tilbakemeldingData.setStudentMld (tilbakemelding.getStudentMld());
-        tilbakemeldingData.setLærerMld (tilbakemelding.getLærerMld());
-    
+    }
+
+    public TilbakemeldingDataModel convertToPojo(Tilbakemelding tilbakemelding) {
+        TilbakemeldingDataModel tilbakemeldingData = new TilbakemeldingDataModel();
+        tilbakemeldingData.setMeldingID(tilbakemelding.getMeldingID());
+        tilbakemeldingData.setStatusMld(tilbakemelding.getStatusMld());
+        tilbakemeldingData.setStudentMld(tilbakemelding.getStudentMld());
+        tilbakemeldingData.setLærerMld(tilbakemelding.getLærerMld());
+
         return tilbakemeldingData;
-}
-    
-    public Tilbakemelding convertToTilbakemeldingEntity(TilbakemeldingDataModel tm){
+    }
+
+    public Tilbakemelding convertToEntity(TilbakemeldingDataModel tm) {
         Tilbakemelding newTilbakemelding = new Tilbakemelding();
         newTilbakemelding.setMeldingID(tm.getMeldingID());
         newTilbakemelding.setStatusMld(tm.getStatusMld());
         newTilbakemelding.setLærerMld(tm.getLærerMld());
         newTilbakemelding.setStudentMld(tm.getStudentMld());
         return newTilbakemelding;
-        
+
     }
-    
+
     @Override
-    public void leggTilLærerMld(int meldingId, String lærerMld) {
+    public void addLærerMld(int meldingId, String lærerMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
-        
+
         tilbakemeldingEntity.setMeldingID(meldingId);
         tilbakemeldingEntity.setLærerMld(lærerMld);
-        
+
         persist(tilbakemeldingEntity);
     }
 
     @Override
-    public void leggTilStatusMld (int meldingId, String statusMld) {
+    public void addStatusMld(int meldingId, String statusMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
-        
+
         tilbakemeldingEntity.setMeldingID(meldingId);
         tilbakemeldingEntity.setStatusMld(statusMld);
-        
-        persist (tilbakemeldingEntity);
+
+        persist(tilbakemeldingEntity);
     }
-    
+
     @Override
-    public void leggTilStudentMld (int meldingId, String studentMld){
+    public void addStudentMld(int meldingId, String studentMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
-        
+
         tilbakemeldingEntity.setMeldingID(meldingId);
         tilbakemeldingEntity.setStudentMld(studentMld);
-        
-        persist (tilbakemeldingEntity);
+
+        persist(tilbakemeldingEntity);
     }
-    
+
     @Override
-    public void oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
+    public void createTilbakemelding(int meldingId, String lærerMld, String statusMld, String studentMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
-        
+
         tilbakemeldingEntity.setMeldingID(meldingId);
         tilbakemeldingEntity.setLærerMld(lærerMld);
         tilbakemeldingEntity.setStatusMld(statusMld);
         tilbakemeldingEntity.setStudentMld(studentMld);
-        
-        persist (tilbakemeldingEntity);
+
+        persist(tilbakemeldingEntity);
     }
-    
+
     @Override
-    public void oppdatereTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
-        Tilbakemelding tilbakemeldingEntity  = em.find(Tilbakemelding.class, meldingId);
- 
-            tilbakemeldingEntity.setLærerMld(lærerMld);
-            tilbakemeldingEntity.setStatusMld(statusMld);
-            tilbakemeldingEntity.setStudentMld(studentMld);
-            
-        persist (tilbakemeldingEntity);
+    public void updateTilbakemelding(int meldingId, String lærerMld, String statusMld, String studentMld) {
+        Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
+
+        tilbakemeldingEntity.setLærerMld(lærerMld);
+        tilbakemeldingEntity.setStatusMld(statusMld);
+        tilbakemeldingEntity.setStudentMld(studentMld);
+
+        persist(tilbakemeldingEntity);
     }
-    
+
     @Override
-    public void kobleTbTilBesvar (int meldingId, int bId) {
+    public void connectToInnlevering(int meldingId, int bId) {
         Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
         Innlevering innleveringEntity = em.find(Innlevering.class, bId);
         innleveringEntity.setMeldingID(tilbakemeldingEntity);
-     
-        persist (tilbakemeldingEntity);
+
+        persist(tilbakemeldingEntity);
     }
-    
+
     /*@Override
     public void leggTilBesvarList (int meldingId, int besvarelseId) {
         Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
@@ -126,11 +119,9 @@ private EntityManager em;
         List <Innlevering> innlevering = new ArrayList <Innlevering>();
         innlevering.add(meldingId);
     }
-    */
-    
+     */
     public void persist(Object object) {
         em.persist(object);
     }
-    
-}
 
+}

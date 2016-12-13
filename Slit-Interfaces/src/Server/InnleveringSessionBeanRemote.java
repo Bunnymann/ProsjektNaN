@@ -6,8 +6,6 @@
 package Server;
 
 import DataModel.BesvarelseDataModel;
-import java.sql.Date;
-import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -16,8 +14,8 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface InnleveringSessionBeanRemote {
-    
-    BesvarelseDataModel getBesvarelseById(int id);
+
+    BesvarelseDataModel getBesvarelse(int id);
 
     void createBesvarelse(BesvarelseDataModel m);
 
@@ -25,7 +23,5 @@ public interface InnleveringSessionBeanRemote {
 
     String testMethod();
 
-    List<BesvarelseDataModel> getBesvarelse();
-    
-    BesvarelseDataModel getBesvarelse(int id);
+    String getInnleveringStudentName(int pk);
 }

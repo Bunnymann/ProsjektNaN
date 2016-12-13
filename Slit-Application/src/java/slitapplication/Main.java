@@ -5,10 +5,6 @@
  */
 package slitapplication;
 
-import Framework.ModulManager;
-import java.util.HashMap;
-
-
 /**
  *
  * @author Sindre
@@ -17,9 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ModulManager m = new ModulManager();
-        HashMap modulMap = m.getModulList();
-        System.out.println(modulMap.entrySet());
     }
 
 

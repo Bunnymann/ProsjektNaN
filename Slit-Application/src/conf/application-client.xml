@@ -26,4 +26,9 @@
     <ejb-ref-type>Session</ejb-ref-type>
     <remote>Server.QueueSessionBeanRemote</remote>
   </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ProgressSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <remote>Server.ProgressSessionBeanRemote</remote>
+  </ejb-ref>
 </application-client>

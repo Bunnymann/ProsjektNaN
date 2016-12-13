@@ -21,6 +21,16 @@ public class BrukerDataModel implements java.io.Serializable {
 
     private String tlfNr;
 
+    private String passord;
+
+    public String getPassord() {
+        return passord;
+    }
+
+    public void setPassord(String passord) {
+        this.passord = passord;
+    }
+
     private String StudentID;
 
     private String lærerID;

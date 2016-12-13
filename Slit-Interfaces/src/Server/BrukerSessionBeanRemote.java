@@ -15,5 +15,7 @@ import javax.ejb.Remote;
 @Remote
 public interface BrukerSessionBeanRemote {
 
+    void createBruker(BrukerDataModel b);
+
     BrukerDataModel getBruker(int id);
 }

@@ -15,5 +15,7 @@ import javax.ejb.Remote;
 @Remote
 public interface BloggSessionBeanRemote {
 
-    void createrBlogg(BloggDataModel bm);
+    void createBlogg(BloggDataModel bm);
+
+    BloggDataModel getBloggPojo(int id);
 }

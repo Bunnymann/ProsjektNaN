@@ -24,14 +24,11 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
     @PersistenceContext(unitName = "Slit-ejbPU")
     private EntityManager em;
 
-    @Override
-    public ModulDataModel getModulById(int id) {
-        System.out.println("getModulById called");
-        Modul modul = em.find(Modul.class, id);
-        return convertModul(modul);
+    public Modul getModulById(int id) {
+        return em.find(Modul.class, id);
     }
 
-    public ModulDataModel convertModul(Modul modul) {
+    public ModulDataModel convertToPojo(Modul modul) {
         System.out.println("Converter Called");
         ModulDataModel modulData = new ModulDataModel();
         modulData.setIdmodul(modul.getModulID());
@@ -43,7 +40,7 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
         return modulData;
     }
 
-    public Modul convertToModulEntity(ModulDataModel m) {
+    public Modul convertToEntity(ModulDataModel m) {
         Modul newModul = new Modul();
         newModul.setModulID(m.getIdmodul());
         newModul.setModulNavn(m.getModulname());
@@ -68,24 +65,18 @@ public class ModulSessionBean implements ModulSessionBeanRemote {
         persist(modulEntity);
     }
 
-    /*
-    public ArrayList convertResultList() {
-        List<Modul> resultList = em.createNamedQuery("Modul.findAll", Modul.class).getResultList();
-        ArrayList pojoList = new ArrayList();
-        for (Modul m : resultList) {
-            pojoList.add(convertModul(m));
-        }
-        ModulListPojo mp = new ModulListPojo();
-        mp.setPojoModulDM(pojoList);
-        return pojoList;
-    }
-     */
     @Override
+    public ModulDataModel getModul(int id) {
+        return convertToPojo(getModulById(id));
+    }
+
+    @Override
+    //konverterer liste med resultater fra databasen til pojo objekter
     public ModulListPojo getModulResultList() {
         List<Modul> modulList = em.createNamedQuery("Modul.findAll", Modul.class).getResultList();
         HashMap<String, ModulDataModel> modulePojoMap = new HashMap();
         for (Modul m : modulList) {
-            ModulDataModel mD = convertModul(m);
+            ModulDataModel mD = convertToPojo(m);
             modulePojoMap.put(mD.getModulname(), mD);
         }
         ModulListPojo mapPojo = new ModulListPojo(modulePojoMap);

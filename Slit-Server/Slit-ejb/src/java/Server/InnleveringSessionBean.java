@@ -12,13 +12,9 @@ import Database.Kø;
 import Database.KøPK;
 import Database.Modul;
 import Database.Tilbakemelding;
-import java.util.ArrayList;
-import java.util.List;
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -27,44 +23,20 @@ import javax.persistence.Query;
 @Stateless
 public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
 
-    @EJB
-    private QueueSessionBeanRemote queueSessionBean;
-
     @PersistenceContext(unitName = "Slit-ejbPU")
     private EntityManager em;
 
-    @Override
-    public BesvarelseDataModel getBesvarelseById(int id) {
-        Innlevering besvarelse = em.find(Innlevering.class, id);
-        return convertBesvarelse(besvarelse);
-    }
+    public Innlevering getBesvarelseById(int id) {
+        return em.find(Innlevering.class, id);
 
-    @Override
-    public List<BesvarelseDataModel> getBesvarelse() {
-        List<BesvarelseDataModel> dataBesvarelse = new ArrayList<BesvarelseDataModel>();
-
-        try {
-            Query query = em.createNamedQuery("Module.findAll", Innlevering.class);
-
-            List<Innlevering> besvarelser = query.getResultList();
-
-            for (Innlevering besvarelse : besvarelser) {
-                dataBesvarelse.add(this.convertBesvarelse(besvarelse));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return dataBesvarelse;
     }
 
     @Override
     public BesvarelseDataModel getBesvarelse(int id) {
-        Innlevering besvarelse = em.find(Innlevering.class, id);
-
-        return this.convertBesvarelse(besvarelse);
+        return convertToPojo(getBesvarelseById(id));
     }
 
-    public BesvarelseDataModel convertBesvarelse(Innlevering besvarelse) {
+    public BesvarelseDataModel convertToPojo(Innlevering besvarelse) {
         BesvarelseDataModel besvarelseData = new BesvarelseDataModel();
         besvarelseData.setBesvarelseID(besvarelse.getBesvarelseID());
         besvarelseData.setDato(besvarelse.getDato());
@@ -72,7 +44,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
         return besvarelseData;
     }
 
-    public Innlevering convertToBesvarelseEntity(BesvarelseDataModel m) {
+    public Innlevering convertToEntity(BesvarelseDataModel m) {
         Innlevering newBesvarelse = new Innlevering();
         newBesvarelse.setBesvarelseID(m.getBesvarelseID());
         newBesvarelse.setDato(m.getDato());
@@ -86,7 +58,7 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
 
     @Override
     public void createBesvarelse(BesvarelseDataModel m) {
-        Innlevering innlev = convertToBesvarelseEntity(m);
+        Innlevering innlev = convertToEntity(m);
         addInnleveringToQueue(innlev);
         persist(innlev);
     }
@@ -94,6 +66,11 @@ public class InnleveringSessionBean implements InnleveringSessionBeanRemote {
     @Override
     public String testMethod() {
         return "This is a test";
+    }
+
+    @Override
+    public String getInnleveringStudentName(int pk) {
+        return em.find(Innlevering.class, pk).getMeldingID().getStatusMld();
     }
 
     public void persist(Object object) {
