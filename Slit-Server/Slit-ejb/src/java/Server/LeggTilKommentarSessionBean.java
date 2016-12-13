@@ -28,13 +28,28 @@ public class LeggTilKommentarSessionBean implements LeggTilKommentarSessionBeanR
 @PersistenceContext(unitName = "Slit-ejbPU")
 private EntityManager em; 
 
+/**
+ * henter ut tilbakemeldings objekt ut i fra DB ved hjelp av ID
+ * 
+ * Hentet ut tilbakemeldings objektet.
+ * returnerer objektet som ble hentet ut. 
+ * 
+ * @param id
+ * @return 
+ */
     @Override
     public TilbakemeldingDataModel getTilbakemeldingById (int id){
         Tilbakemelding tilbakemelding = em.find(Tilbakemelding.class, id);
         return convertTilbakemelding (tilbakemelding);
     
 }
-
+/**
+ * Konverterer fra DB objekt til pojo
+ * returnere objektet.
+ * 
+ * @param tilbakemelding
+ * @return 
+ */
     public TilbakemeldingDataModel convertTilbakemelding (Tilbakemelding tilbakemelding) {
         TilbakemeldingDataModel tilbakemeldingData = new TilbakemeldingDataModel() ;
         tilbakemeldingData.setMeldingID (tilbakemelding.getMeldingID());
@@ -45,6 +60,13 @@ private EntityManager em;
         return tilbakemeldingData;
 }
     
+   /**
+    * Konvertere fra pojo til entitets objekt. 
+    * returnere objektet. 
+    * 
+    * @param tm
+    * @return 
+    */
     public Tilbakemelding convertToTilbakemeldingEntity(TilbakemeldingDataModel tm){
         Tilbakemelding newTilbakemelding = new Tilbakemelding();
         newTilbakemelding.setMeldingID(tm.getMeldingID());
@@ -55,6 +77,12 @@ private EntityManager em;
         
     }
     
+    /**
+     * legg til ny lærer melding. 
+     * 
+     * @param meldingId
+     * @param lærerMld 
+     */
     @Override
     public void leggTilLærerMld(int meldingId, String lærerMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
@@ -65,6 +93,12 @@ private EntityManager em;
         persist(tilbakemeldingEntity);
     }
 
+    /**
+     * Legg til ny status melding. 
+     * 
+     * @param meldingId
+     * @param statusMld 
+     */
     @Override
     public void leggTilStatusMld (int meldingId, String statusMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
@@ -75,6 +109,12 @@ private EntityManager em;
         persist (tilbakemeldingEntity);
     }
     
+    /**
+     *Legg til ny student melding.  
+     *
+     * @param meldingId
+     * @param studentMld 
+     */
     @Override
     public void leggTilStudentMld (int meldingId, String studentMld){
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
@@ -85,7 +125,22 @@ private EntityManager em;
         persist (tilbakemeldingEntity);
     }
     
-  
+    /**
+     * Opprette et nytt tilbakemeldings objekt. 
+     * 
+     * bruke entity manager til å lage et nytt tilbakemeldings objekt.
+     * settet meldingId
+     * setter lærerMld
+     * setter statusMld
+     * Setter studentMld
+     * returnerer objektet som ble laget. 
+     * 
+     * @param meldingId
+     * @param lærerMld
+     * @param statusMld
+     * @param studentMld
+     * @return 
+     */
     public Tilbakemelding oppretteTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
         Tilbakemelding tilbakemeldingEntity = new Tilbakemelding();
         
@@ -95,9 +150,22 @@ private EntityManager em;
         tilbakemeldingEntity.setStudentMld(studentMld);
         
         return tilbakemeldingEntity;
-        //persist (tilbakemeldingEntity);
     }
     
+    /**
+     * Oppdaterer et eksisterende tilbakemelings objekt. 
+     * 
+     * Henter objektet man vil oppdatere. 
+     * settet ny lærerMld
+     * setter ny statusMld
+     * setter ny studentMld
+     * lagrer i DB
+     * 
+     * @param meldingId
+     * @param lærerMld
+     * @param statusMld
+     * @param studentMld 
+     */
     @Override
     public void oppdatereTb (int meldingId, String lærerMld, String statusMld, String studentMld) {
         Tilbakemelding tilbakemeldingEntity  = em.find(Tilbakemelding.class, meldingId);
@@ -109,6 +177,17 @@ private EntityManager em;
         persist (tilbakemeldingEntity);
     }
     
+    /**
+     * Kobler tilbakemelding til et innleverings objekt. 
+     * 
+     * Henter innleverings objekter. 
+     * lager et nytt tilbakemelding objekt
+     * legger til tilbakemelding til innlevering.
+     * lagrer i DB
+     * 
+     * @param bId
+     * @param tb 
+     */
     @Override
     public void kobleTbTilBesvar (int bId, TilbakemeldingDataModel tb) {
         //Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
@@ -121,17 +200,6 @@ private EntityManager em;
         persist (innleveringEntity);
     }
     
-    
-    
-    
-    /*@Override
-    public void leggTilBesvarList (int meldingId, int besvarelseId) {
-        Tilbakemelding tilbakemeldingEntity = em.find(Tilbakemelding.class, meldingId);
-        Innlevering innleveringEntity = em.find(Innlevering.class, besvarelseId);
-        List <Innlevering> innlevering = new ArrayList <Innlevering>();
-        innlevering.add(meldingId);
-    }
-    */
     
     public void persist(Object object) {
         em.persist(object);

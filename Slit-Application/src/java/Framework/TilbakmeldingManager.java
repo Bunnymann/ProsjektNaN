@@ -32,9 +32,7 @@ public class TilbakmeldingManager {
     public TilbakemeldingDataModel getTilbakemeldingById(int id) {
         return this.lookupLeggTilKommentarSessionBeanRemote().getTilbakemeldingById(id);
     }
-            
-    
-    
+           
     public void leggTilLærerMld(int meldingId, String lærerMld) {
         LeggTilKommentarSessionBeanRemote bean = this.lookupLeggTilKommentarSessionBeanRemote();
         bean.leggTilLærerMld (meldingId, lærerMld);
