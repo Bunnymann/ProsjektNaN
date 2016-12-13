@@ -68,7 +68,16 @@ public class FXMLStartSideStudentController implements Initializable {
         bloggS_stage.show();
     }
     
+    @FXML
+    private void loggUtStudent(ActionEvent event) throws IOException {
+        Parent bloggS_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene bloggS_scene = new Scene(bloggS_parent);
+        Stage bloggS_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        bloggS_stage.hide();
+        bloggS_stage.setScene(bloggS_scene);
+        bloggS_stage.show();
     
+    }
 //    private void startsidestudent(ActionEvent event) throws IOException {
 //        Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSide.fxml"));
 //        Scene startsidestudent_scene = new Scene(startsidestudent_parent);

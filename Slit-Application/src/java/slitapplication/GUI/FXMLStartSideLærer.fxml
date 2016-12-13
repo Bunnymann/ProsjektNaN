@@ -93,6 +93,7 @@
                   <Font size="35.0" />
                </font>
             </Label>
+            <Button layoutX="877.0" layoutY="23.0" mnemonicParsing="false" onAction="#loggUtLærer" text="LoggUt" />
          </children>
          <stylesheets>
             <URL value="@fxmlstartside.css" />

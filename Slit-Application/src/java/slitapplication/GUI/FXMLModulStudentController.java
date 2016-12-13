@@ -20,6 +20,7 @@ import Resources.ModulHash;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
+import javafx.stage.Modality;
 
 
 
@@ -31,7 +32,7 @@ import javafx.scene.control.TextArea;
 public class FXMLModulStudentController implements Initializable {
 
 ModulHash m;
-
+    // `Lager en ny hashMap med alle ModulObjektene, sånn at de enkelt kan bli søk på.
     public FXMLModulStudentController() {
         this.m = new ModulHash();
     }
@@ -59,14 +60,14 @@ ModulHash m;
 //        return funn;
 //    }
     
-      
+    //Refereret til textAreaet i GUI'et.
     @FXML
     public TextArea ModulInfo;
         
     
     
     
-   
+    //Sender deg til ModulSiden for Student hvis du trykker på Knappen.
      @FXML
     private void modulerS(ActionEvent event) throws IOException {
         Parent modulerS_parent = FXMLLoader.load(getClass().getResource("FXMLModulStudent.fxml"));
@@ -76,7 +77,8 @@ ModulHash m;
         modulerS_stage.setScene(modulerS_scene);
         modulerS_stage.show();
     }
-    
+   
+    //Sender deg til BrukerSiden for student hvis du trykker på knappen.
      @FXML
     private void brukereS(ActionEvent event) throws IOException {
         Parent brukereS_parent = FXMLLoader.load(getClass().getResource("FXMLBrukereStudent.fxml"));
@@ -87,6 +89,7 @@ ModulHash m;
         brukereS_stage.show();
     }
     
+    //Sender deg til Fremgangsiden for student hvis du trykker på knappen.
      @FXML
     private void fremgangS(ActionEvent event) throws IOException {
         Parent fremgangS_parent = FXMLLoader.load(getClass().getResource("FXMLFremgangStudent.fxml"));
@@ -97,6 +100,7 @@ ModulHash m;
         fremgangS_stage.show();
     }
     
+    // Sender deg til Blogg siden for student hvis du trykker på knappen.
     @FXML
     private void bloggS(ActionEvent event) throws IOException {
         Parent bloggS_parent = FXMLLoader.load(getClass().getResource("FXMLBloggStudent.fxml"));
@@ -107,6 +111,7 @@ ModulHash m;
         bloggS_stage.show();
     }
     
+    //Sender deg tilbake til Startsiden for student. 
     @FXML
     private void startSideStudent(ActionEvent event) throws IOException {
         Parent startsidestudent_parent = FXMLLoader.load(getClass().getResource("FXMLStartSideStudent.fxml"));
@@ -118,6 +123,21 @@ ModulHash m;
     }
         
     
+    @FXML
+    private void settStudentIKø (ActionEvent event) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = new Stage();
+        
+        root = FXMLLoader.load(getClass().getResource("FXMLPopUpBesvarelseStudent.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    
+    }
+    
+    
+    // Henter Modulinfo fro modul 1 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
     @FXML
     private void modul1 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 1");
@@ -137,6 +157,7 @@ ModulHash m;
         
     }
     
+    // Henter Modulinfo fro modul 2 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
     @FXML
     private void modul2 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 2");
@@ -156,7 +177,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 3 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul3 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 3");
         ModulInfo.appendText("\n");
@@ -175,7 +197,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 4 fra hashmappen og viser det fram i textAreaet på modulStudent siden.FXML
+    @FXML
     private void modul4 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 4");
         ModulInfo.appendText("\n");
@@ -194,8 +217,8 @@ ModulHash m;
         
     }
     
-    
-     @FXML
+    // Henter Modulinfo fro modul 5 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul5 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 5");
         ModulInfo.appendText("\n");
@@ -214,7 +237,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 6 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul6 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 6");
         ModulInfo.appendText("\n");
@@ -233,7 +257,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 7 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul7 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 7");
         ModulInfo.appendText("\n");
@@ -252,7 +277,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 8 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul8 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 8");
         ModulInfo.appendText("\n");
@@ -271,7 +297,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 9 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul9 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 9");
         ModulInfo.appendText("\n");
@@ -290,7 +317,8 @@ ModulHash m;
         
     }
     
-     @FXML
+    // Henter Modulinfo fro modul 10 fra hashmappen og viser det fram i textAreaet på modulStudent siden.
+    @FXML
     private void modul10 (ActionEvent event) throws IOException {    
         ModulInfo.setText("Her er info om Modul 10");
         ModulInfo.appendText("\n");

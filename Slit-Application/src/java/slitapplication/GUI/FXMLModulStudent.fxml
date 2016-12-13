@@ -60,15 +60,15 @@
                             <children>
                                 <Pane layoutY="8.0" prefHeight="510.0" prefWidth="822.0">
                                     <children>
-                                        <ScrollPane layoutY="29.0" prefHeight="469.0" prefViewportHeight="389.0" prefViewportWidth="76.0" prefWidth="131.0">
+                                        <ScrollPane layoutY="29.0" prefHeight="469.0" prefViewportHeight="389.0" prefViewportWidth="76.0" prefWidth="146.0">
                                             <content>
-                                                <VBox layoutY="29.0" prefHeight="501.0" prefWidth="137.0" spacing="20.0">
+                                                <VBox layoutY="29.0" prefHeight="501.0" prefWidth="151.0" spacing="20.0">
                                                     <children>
                                                         <Button layoutY="29.0" mnemonicParsing="false" onAction="#modul1" prefHeight="31.0" prefWidth="126.0" text="Modul 1" />
                                                         <Button layoutY="69.0" mnemonicParsing="false" onAction="#modul2" prefHeight="31.0" prefWidth="127.0" text="Modul 2" />
                                                         <Button layoutY="113.0" mnemonicParsing="false" onAction="#modul3" prefHeight="31.0" prefWidth="127.0" text="Modul 3" />
                                                         <Button layoutY="153.0" mnemonicParsing="false" onAction="#modul4" prefHeight="31.0" prefWidth="127.0" text="Modul 4" />
-                                                        <Button layoutY="191.0" mnemonicParsing="false" onAction="#modul5" prefHeight="31.0" prefWidth="127.0" text="Modul 5" />
+                                                        <Button layoutY="191.0" mnemonicParsing="false" onAction="#modul5" prefHeight="31.0" prefWidth="126.0" text="Modul 5" />
                                                         <Button layoutY="230.0" mnemonicParsing="false" onAction="#modul6" prefHeight="31.0" prefWidth="126.0" text="Modul 6" />
                                                         <Button layoutY="268.0" mnemonicParsing="false" onAction="#modul7" prefHeight="31.0" prefWidth="126.0" text="Modul 7" />
                                                         <Button layoutY="305.0" mnemonicParsing="false" onAction="#modul8" prefHeight="31.0" prefWidth="125.0" text="Modul 8" />
@@ -78,11 +78,12 @@
                                                 </VBox>
                                             </content>
                                         </ScrollPane>
-                                        <Pane layoutX="131.0" layoutY="28.0" prefHeight="482.0" prefWidth="646.0">
+                                        <Pane layoutX="131.0" layoutY="28.0" prefHeight="463.0" prefWidth="646.0">
                                             <children>
-                                                <TextArea fx:id="ModulInfo" editable="false" layoutY="1.0" prefHeight="482.0" prefWidth="646.0" />
+                                                <TextArea fx:id="ModulInfo" editable="false" layoutX="16.0" layoutY="1.0" prefHeight="450.0" prefWidth="630.0" />
                                             </children>
                                         </Pane>
+                              <Button layoutX="600.0" layoutY="481.0" mnemonicParsing="false" onAction="#settStudentIKø" text="Sett deg i besvarelse kø" />
                                     </children>
                                 </Pane>
                             </children>

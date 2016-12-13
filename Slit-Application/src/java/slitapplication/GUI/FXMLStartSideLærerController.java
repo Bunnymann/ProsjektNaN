@@ -56,6 +56,16 @@ public class FXMLStartSideLærerController implements Initializable {
         fremgang_stage.show();
     }
     
+    @FXML
+    private void loggUtLærer (ActionEvent event) throws IOException {
+        Parent fremgang_parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene fremgang_scene = new Scene(fremgang_parent);
+        Stage fremgang_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        fremgang_stage.hide();
+        fremgang_stage.setScene(fremgang_scene);
+        fremgang_stage.show();
+    }
+    
    
     
     @Override

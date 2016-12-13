@@ -31,6 +31,7 @@ public class ModulManager {
             throw new RuntimeException(ne);
         }
     }*/
+    
     public ModulDataModel getModul(int id) {
         System.out.println("manager.getModul Called");
         return this.lookupModulSessionBeanRemote().getModulById(id);

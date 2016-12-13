@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author eier
+ * @author Benjamin
  */
 public class FXMLModulLærerController implements Initializable {
     
@@ -36,7 +36,12 @@ public class FXMLModulLærerController implements Initializable {
     String  modulTid;
     String  modulMål;
     int  quizID;
-      
+    
+    //Lager en ny modulManager for å få funksjonene til manageren inn på controllerklasssen.
+    ModulManager manager;  
+    //Lager en ny HashMap som har alle modulene inni seg
+    //Vi bruker Hashmap, for å kunne søke opp på akkurat den modulen du vil ha.
+    //Bruker ikke list fordi da vet vi aldri hvilken modul du faktisk får.
     ModulHash m;
 
     public FXMLModulLærerController() {
@@ -46,6 +51,7 @@ public class FXMLModulLærerController implements Initializable {
         this.modulMål = null;
         this.modulTid = null;
         this.quizID = 0;
+        this.manager = new ModulManager();
     
     }
 
@@ -89,15 +95,14 @@ public class FXMLModulLærerController implements Initializable {
         this.quizID = quizID;
     }
     
-     ModulManager manager;    
-        
     
+    //TextAreaet i GUI på lærer siden, blir funnet så vi kan hente info fra textareat.
     @FXML
     public TextArea modulInfoL;
     
     
     
-    
+    //Bytter scene til ModulLærer siden.
         @FXML
     private void moduler(ActionEvent event) throws IOException {
         Parent moduler_parent = FXMLLoader.load(getClass().getResource("FXMLModulLærer.fxml"));
@@ -108,6 +113,7 @@ public class FXMLModulLærerController implements Initializable {
         moduler_stage.show();
     }
     
+    //Bytter scene til BrukereLærer siden.
      @FXML
     private void brukere (ActionEvent event) throws IOException {
         Parent brukere_parent = FXMLLoader.load(getClass().getResource("FXMLBrukereLærer.fxml"));
@@ -118,6 +124,7 @@ public class FXMLModulLærerController implements Initializable {
         brukere_stage.show();
     }
     
+    //Bytter scenen til FremgangLærer siden.
      @FXML
     private void fremgang(ActionEvent event) throws IOException {
         Parent fremgang_parent = FXMLLoader.load(getClass().getResource("FXMLFremgangLærer.fxml"));
@@ -128,6 +135,7 @@ public class FXMLModulLærerController implements Initializable {
         fremgang_stage.show();
     }
     
+    //Setter deg tilbake til startsiden for lærer.
     @FXML
     private void startside (ActionEvent event) throws IOException {
         Parent startside_parent = FXMLLoader.load(getClass().getResource("FXMLStartSideLærer.fxml"));
@@ -139,7 +147,7 @@ public class FXMLModulLærerController implements Initializable {
        
     }
    
-    
+    //Henter informasjonen om modul1 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul1 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 1");
@@ -159,6 +167,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul2 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul2 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 2");
@@ -178,6 +187,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul3 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul3 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 3");
@@ -197,6 +207,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul4 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul4 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 4");
@@ -216,6 +227,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul5 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul5 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 5");
@@ -235,6 +247,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul6 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul6 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 6");
@@ -254,6 +267,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul7 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul7 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 7");
@@ -273,6 +287,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul8 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul8 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 8");
@@ -292,6 +307,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul9 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul9 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 9");
@@ -311,6 +327,7 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    //Henter informasjonen om modul10 fra Hashmap som skrives ut i TextAreaet.
     @FXML
     private void modul10 (ActionEvent event) throws IOException {    
         modulInfoL.setText("Her er info om Modul 10");
@@ -331,7 +348,7 @@ public class FXMLModulLærerController implements Initializable {
     }
     
     
-    
+    //Åpner et popupVindu for lærer, som lærer på krysse ut før han ka gjøre noe videre i programmet.
     @FXML
     private void leggTilModul (ActionEvent event) throws IOException {
         Stage stage;
@@ -345,6 +362,9 @@ public class FXMLModulLærerController implements Initializable {
         
     }
     
+    
+    //Henter textFeild og textarea fra GUI med Fx:id for å kunne referete til disse når
+    //Det skal skrives til databasen.
     @FXML
     public TextField modulIDFelt;
     @FXML
@@ -355,12 +375,8 @@ public class FXMLModulLærerController implements Initializable {
     public TextField modulMålFelt;
     @FXML 
     public TextField quizFelt;
-    
-    
-    
-    
-    
-    
+   
+    //Henter ut det læreren har skrevet om en ny modul, og skrivet dette inn til datanbasen. 
     @FXML 
     private void registrerModul (ActionEvent event) throws IOException {
         setModulDesc(modulDescFelt.getText());
@@ -372,6 +388,21 @@ public class FXMLModulLærerController implements Initializable {
         manager.createModul(modulId, modulMål, modulDesc, modulTid,"Modul " + modulId, quizID);
     }
     
+    
+    //Åpner et popUpvindu for slett modul.
+   @FXML 
+   private void slettModul (ActionEvent event) throws IOException{
+        Stage stage2;
+        Parent root2;
+        stage2 = new Stage();
+        
+        root2 = FXMLLoader.load(getClass().getResource("FXMLPopUpSlettModul.fxml"));
+        stage2.setScene(new Scene(root2));
+        stage2.initModality(Modality.APPLICATION_MODAL);
+        stage2.showAndWait();
+   }  
+    
+   
   /**
      * Initializes the controller class.
      */
